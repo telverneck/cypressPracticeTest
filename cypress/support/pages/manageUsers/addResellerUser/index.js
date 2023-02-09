@@ -9,7 +9,12 @@ let securityLevelSelect = '#SecurityLevel'
 let systemLevelSelect = '#SystemLevel' 
 let saveButton = '#SaveButton' 
 let messageInfoAlert = '#Message' 
-let requiredFieldError = '#RequiredFieldValidator2' 
+let phoneRequiredFieldError = '#RequiredFieldValidator1' 
+let firstNameRequiredFieldError = '#RequiredFieldValidator2' 
+let lastNameRequiredFieldError = '#RequiredFieldValidator3' 
+let emailRequiredFieldError = '#RequiredFieldValidator4' 
+let emailInvalidFieldError = '#RegularExpressionValidator1' 
+
 
 
 
@@ -60,9 +65,20 @@ class addResellerUser {
     }
 
     requiredFieldError(){
-        actionsPage.isIframeElementVisible(requiredFieldError)
+        actionsPage.isIframeElementVisible(phoneRequiredFieldError)
+        actionsPage.isIframeElementVisible(firstNameRequiredFieldError)
+        actionsPage.isIframeElementVisible(lastNameRequiredFieldError)
+        actionsPage.isIframeElementVisible(emailRequiredFieldError)
 
         
+    }
+
+    checkInvalidEmailError(){
+        actionsPage.inputIframeText(emailInput, "Test@Test.com")
+        clickSaveButton()
+        actionsPage.isIframeElementVisible(emailRequiredFieldError)
+
+
     }
 
     

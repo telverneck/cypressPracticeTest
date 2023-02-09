@@ -51,7 +51,7 @@ class HoginPage {
         cy.enter(leftMenuFrame).then(iframeBanner => {
             iframeBanner()
             .xpath(`//div[@id='Menu'][contains(@class,'RadPanelBar')]//*[contains(text(), '${optionMenu}')]`).click()
-            .xpath(`//*[contains(@class,'rpGroup')]//*[contains(text(), '${subMenuOption}')]`).click()
+            .xpath(`//*[contains(@style,'visible')]//*[contains(@class,'rpGroup')]//*[contains(text(), '${subMenuOption}')]`).click()
         })
 
         cy.enter(mainFrame).then(iframeBanner => {

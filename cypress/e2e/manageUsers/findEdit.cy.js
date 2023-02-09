@@ -5,7 +5,7 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
-import addResellerUserPage from '../../support/pages/manageUsers/addResellerUser' 
+import findEditPage from '../../support/pages/manageUsers/findEdit' 
 
 
 describe("Manage Users Test Page", () => {
@@ -24,42 +24,21 @@ describe("Manage Users Test Page", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Manage Users'
-        const subMenuOption = 'Add Reseller User'
+        const subMenuOption = 'Find/Edit'
        
     
         homePage.goToOption(optionMenu, subMenuOption)
-        addResellerUserPage.checkaddResellerUserPage()
+        findEditPage.checkFindEditPage()
     })
 
-    it("Check Manage Users > Add Reseller User - Add User", () => {
+    it("Check Manage Users > findEditPage - Search for User", () => {
 
-        addResellerUserPage.createNewUser()
-
-
-    });
-
-    it("Check Manage Users > Add Reseller User - Check Mandatory Fields", () => {
-
-        addResellerUserPage.clickSaveButton()
-        addResellerUserPage.requiredFieldError()
-        addResellerUserPage.checkInvalidEmailError()
-
-
-    });
-
-    it("Check Manage Users > Add Reseller User - Check email validation", () => {
-
-        addResellerUserPage.checkInvalidEmailError()
+        findEditPage.clickRefreshButton()
 
 
     });
 
     
-
-  
-
-    
-
 
 })
 
