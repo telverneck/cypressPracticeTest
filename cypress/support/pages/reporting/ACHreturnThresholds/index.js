@@ -7,7 +7,7 @@ let submitButton = '//button[text()="Submit"]'
 let csvButton = '//button[text()="CSV"]' 
 let filterInput = 'input[placeholder="Filter"]' 
 let table = 'table' 
-let tableResults = 'table tbody' 
+let tableResults = '.transaction-table tbody tr' 
 let mainFrame = '#mainFrame'
 
 
@@ -35,6 +35,24 @@ class AchReturnThresholdsPage {
         
         actionsPage.clickIframeXpath(submitButton)
     }
+
+
+    checkResultsTable(){
+        actionsPage.isIframeElementVisible(tableResults)
+
+    }
+
+    noResultsTable(){
+        actionsPage.isIframeElementNotVisible(tableResults)
+
+    }
+
+    searchForFilter(text){
+        actionsPage.inputIframeText(filterInput,text)
+
+    }
+
+    
 
    
 

@@ -41,12 +41,24 @@ class ActionsPage {
         switchToIframe().find(webElement).should('be.visible')
     }
 
+    isIframeElementNotVisible(webElement) {
+        switchToIframe().find(webElement).should('not.exist')
+    }
+
+    isElementNotVisible(xpathLocater) {
+        cy.xpath(xpathLocater).should('not.exist');
+    };
+
     pageTitleShouldBeEqual(title) {
         cy.title().should('eq', title)
     }
 
     elementShouldContainText(webElement, text) {
         cy.get(webElement).should('contains.text', text)
+    }
+
+    elementIframeShouldContainText(webElement, text) {
+        switchToIframe().find(webElement).should('contains.text', text)
     }
 
     inputText(webElement, text) {
