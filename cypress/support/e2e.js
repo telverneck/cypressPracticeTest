@@ -17,5 +17,6 @@
 import './commands'
 
 import 'cypress-mochawesome-reporter/register';
+import '@faker-js/faker';
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
