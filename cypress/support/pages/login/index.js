@@ -7,6 +7,8 @@ let passwordInput = '#Login1_Password'
 let loginButton = '#Login1_LoginButton'
 let bannerImage = '#LogoImage'
 let errorMessageToast = "td[style='color:Red;']"
+let forgotPasswordLink = '#Login1_PasswordRecoveryLink' 
+
 
 class LoginPage {
 
@@ -40,6 +42,13 @@ class LoginPage {
         actionsPage.pageTitleShouldBeEqual('REPAY')
         actionsPage.isElementVisible(bannerImage)
     }
+
+    clickForgotPassword(){
+        actionsPage.click(forgotPasswordLink)
+        
+    }
+
+    
 
 }
 
