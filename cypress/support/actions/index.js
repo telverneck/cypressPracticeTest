@@ -70,6 +70,14 @@ class ActionsPage {
         switchToIframe().find(webElement).type(text);
     }
 
+    submitIframe(webElement) {
+        switchToIframe().find(webElement).type('{enter}')
+    }
+
+    selectValueFromList(webElement, value) {
+        switchToIframe().find(webElement).select(value)
+    }
+
 }
 
 export default new ActionsPage()

@@ -31,7 +31,7 @@ describe("Reporting Test Page", () => {
         achReturnThresholdsPage.checkAchReturnThresholdsPage()
     })
 
-    it("Check Reporting > ACH Return Thresholds - Search for Valid content", () => {
+    it("Check Reporting > ACH Return Thresholds - Search for Valid content - Various date ranges, including reset and submit - CSV - One, several, all values", () => {
 
         achReturnThresholdsPage.searchForDate("01/01/2022", "02/02/2023")
         achReturnThresholdsPage.checkResultsTable()
@@ -39,7 +39,7 @@ describe("Reporting Test Page", () => {
 
     });
 
-    it("Check Reporting > ACH Return Thresholds- Search for InValid content", () => {
+    it("Check Reporting > ACH Return Thresholds- Search for invalid content - empty values and other negative tests, including reset and submit", () => {
 
         achReturnThresholdsPage.searchForDate("01/01/2022", "02/02/2020")
         achReturnThresholdsPage.noResultsTable()
@@ -47,7 +47,7 @@ describe("Reporting Test Page", () => {
 
     });
 
-    it("Check Reporting > ACH Return Thresholds - Valid Filter", () => {
+    it("Check Reporting > ACH Return Thresholds - Valid Filter - Filter", () => {
 
         
         achReturnThresholdsPage.searchForDate("01/01/2022", "02/02/2023")
@@ -58,7 +58,7 @@ describe("Reporting Test Page", () => {
 
     });
 
-    it("Check Reporting > ACH Return Thresholds - Invalid Filter", () => {
+    it("Check Reporting > ACH Return Thresholds - Invalid Filter - Filter clear values and negative testing - Sorting for all columns", () => {
 
         achReturnThresholdsPage.searchForDate("01/01/2022", "02/02/2023")
         achReturnThresholdsPage.checkResultsTable()
