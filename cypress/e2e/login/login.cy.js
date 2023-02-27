@@ -18,7 +18,7 @@ describe("Login Test", () => {
         
     })
     
-    it("Should be able to Login and check the Dashboard Page - Standard and full admin", () => {
+    it("Login Page -  Standard and full admin", () => {
         
         cy.get("@user").then((user) => {
             loginPage.login(user.login, user.password)
@@ -26,10 +26,12 @@ describe("Login Test", () => {
         })
         
         homePage.checkHomePage()
+        homePage.logout()
+        loginPage.checkLoginPage()
 
     });
 
-    it("Negative testing - Check Wrong login message", () => {
+    it("Login Page - Negative testing - Check Wrong login message", () => {
 
         loginPage.login('Wrong user', 'Wrong password')
         loginPage.checkErrorLoginMessage()
@@ -44,7 +46,7 @@ describe("Login Test", () => {
 
     });
 
-    it("Login Page - check Mandatory fields", () => {
+    it("Forgot Password Page - check Mandatory fields", () => {
         
         loginPage.clickForgotPassword()
         forgotPasswordPage.checkForgotPasswordPage()
@@ -53,7 +55,7 @@ describe("Login Test", () => {
 
     });
 
-    it("Login Page - check Wrong Email error", () => {
+    it("Forgot Password Page - check Wrong Email error", () => {
         
         loginPage.clickForgotPassword()
         forgotPasswordPage.checkForgotPasswordPage()
@@ -62,18 +64,27 @@ describe("Login Test", () => {
 
     });
 
-    it("Check logout", () => {
+    it("Forgot Password Page - Go to Forgot Password and return to login page", () => {
         
-        cy.get("@user").then((user) => {
-            loginPage.login(user.login, user.password)
-            authenticatePage.authenticate(user.code)
-        })
-        
-        homePage.checkHomePage()
-        homePage.logout()
+        loginPage.clickForgotPassword()
+        forgotPasswordPage.checkForgotPasswordPage()
+        forgotPasswordPage.clickReturnToLoginPageLink()
         loginPage.checkLoginPage()
 
     });
+
+    // it("Login - Check logout", () => {
+        
+    //     cy.get("@user").then((user) => {
+    //         loginPage.login(user.login, user.password)
+    //         authenticatePage.authenticate(user.code)
+    //     })
+        
+    //     homePage.checkHomePage()
+    //     homePage.logout()
+    //     loginPage.checkLoginPage()
+
+    // });
    
 
 

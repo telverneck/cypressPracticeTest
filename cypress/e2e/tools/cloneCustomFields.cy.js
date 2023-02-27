@@ -6,11 +6,11 @@ import homePage from '../../support/pages/home'
 import authenticatePage from '../../support/pages/authentication'
 
 import addMerchantPage from '../../support/pages/manageMerchants/add' 
-import findMerchantPage from '../../support/pages/manageMerchants/find' 
-import tokenSharingPage from '../../support/pages/manageMerchants/tokenSharing' 
+
+import cloneCustomFieldsPage from '../../support/pages/tools/cloneCustomFields' 
 
 
-describe("Manage Merchants Test Page - Token Sharing", () => {
+describe("Tools Test Page", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -25,25 +25,35 @@ describe("Manage Merchants Test Page - Token Sharing", () => {
         })
 
         homePage.checkHomePage()
-        const optionMenu = 'Manage Merchants'
-        const subMenuOption = 'Token Sharing' 
-        
+        const optionMenu = 'Tools'
+        const subMenuOption = 'Clone Custom Fields' 
         
         homePage.goToOption(optionMenu, subMenuOption)
-        tokenSharingPage.checkTokenSharingPage()
+
+        cloneCustomFieldsPage.checkCloneCustomFieldsPage()
     })
     
-    it("Check Manage Merchants > Token Sharing - Add - Edit - Delete", () => {
-        const testName = 'Test Group Name' 
+    it("Check Tools > Clone Custom Fields - Valid Search", () => {
 
-        tokenSharingPage.addNewMerchantGroup(testName)
-        tokenSharingPage.filterGroup(testName)
-        tokenSharingPage.deleteNewMerchant()
+        cloneCustomFieldsPage.searchMerchantID("2")
+        cloneCustomFieldsPage.checkResults()
 
 
 
 
     });
+
+    it("Check Tools > Clone Custom Fields - invalid Search", () => {
+
+        cloneCustomFieldsPage.searchByDate("-2")
+        cloneCustomFieldsPage.checkNoResults()
+
+
+
+
+    });
+
+    
 
     
 

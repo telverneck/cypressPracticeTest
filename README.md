@@ -75,3 +75,8 @@ The first file which Cypress investigates; any imports and additional libraries(
 
 ## How to Configure external data file
 Cypress allows you to pass in [--environment variables](https://docs.cypress.io/guides/guides/environment-variables#Option-4-env) as options when using CLI tool. Values here will overwrite all other conflicting environment variables. Multiple values must be separated by a comma, not a space. You can use the --env argument for [cypress run.](https://docs.cypress.io/guides/guides/command-line#cypress-run)
+
+# How to run cypress test and get the Test Report
+
+`npx cypress run` to run everything
+`npx cypress run --spec=cypress/e2e/[ADD_FOLDER]`  to run a specific folder
