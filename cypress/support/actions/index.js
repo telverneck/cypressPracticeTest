@@ -41,6 +41,12 @@ class ActionsPage {
         switchToIframe().find(webElement).should('be.visible')
     }
 
+    isIframeElementChecked(webElement) {
+        switchToIframe().find(webElement).should('be.visible').and('not.be.checked');
+    }
+
+    
+
     isIframeElementNotVisible(webElement) {
         switchToIframe().find(webElement).should('not.exist')
     }

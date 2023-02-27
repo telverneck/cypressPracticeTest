@@ -35,6 +35,8 @@ class HoginPage {
             iframeBanner()
             .find('h2');
         })
+        cy.wait(3000) // waiting for spinner to disapears
+
     }
 
    

@@ -9,7 +9,7 @@ import addMerchantPage from '../../support/pages/manageMerchants/add'
 import findMerchantPage from '../../support/pages/manageMerchants/find' 
 
 
-describe("Manage Merchants Test Page", () => {
+describe("Manage Merchants Test Page - Find", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
