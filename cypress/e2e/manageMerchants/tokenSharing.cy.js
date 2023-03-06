@@ -13,6 +13,7 @@ import tokenSharingPage from '../../support/pages/manageMerchants/tokenSharing'
 describe("Manage Merchants Test Page - Token Sharing", () => {
 
     beforeEach(function () {
+        cy.setCookie('rememberDevice_537194149','%241%248YsD9YlSwthVcWMKQn4tNw%3D%3D%24M7qyYxm5nHRVfxZ%2Fd4RVrWbvoQ8VzNsDYtr78ghjhoU%3D')
         cy.fixture("gatewayCredentials").as('user')
         loginPage.goToLoginPage()
 
@@ -21,7 +22,7 @@ describe("Manage Merchants Test Page - Token Sharing", () => {
 
         cy.get("@user").then((user) => {
             loginPage.login(user.login, user.password)
-            authenticatePage.authenticate(user.code)
+            // authenticatePage.authenticate(user.code)
         })
 
         homePage.checkHomePage()
@@ -33,6 +34,16 @@ describe("Manage Merchants Test Page - Token Sharing", () => {
         tokenSharingPage.checkTokenSharingPage()
     })
     
+    it("Check Manage Merchants > Token Sharing - Add", () => {
+        const testName = 'Test Group Name' 
+
+        tokenSharingPage.addNewMerchantGroup(testName)
+
+
+
+
+    });
+
     it("Check Manage Merchants > Token Sharing - Add - Edit - Delete", () => {
         const testName = 'Test Group Name' 
 

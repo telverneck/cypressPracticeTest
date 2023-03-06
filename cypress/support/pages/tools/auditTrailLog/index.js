@@ -17,7 +17,7 @@ let firstResultRow = '.gridHeader+ tr.gridRow'
 
 class auditTrailLogPage {
 
-    checkManualSettlementPage() {
+    checkAuditTrailLogPage() {
 
         cy.wait(2000) // waiting for spinner to disapears
         
