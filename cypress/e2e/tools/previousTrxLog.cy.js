@@ -5,11 +5,12 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
+import addMerchantPage from '../../support/pages/manageMerchants/add' 
 
-import ACHInternalFileProcessingPage from '../../support/pages/reporting/ACHInternalFileProcessing' 
+import cloneCustomFieldsPage from '../../support/pages/tools/cloneCustomFields' 
 
 
-describe("Reporting Test Page - US Disbursement", () => {
+describe("Tools Test Page", () => {
 
     beforeEach(function () {
         cy.setCookie('rememberDevice_537194149','%241%248YsD9YlSwthVcWMKQn4tNw%3D%3D%24M7qyYxm5nHRVfxZ%2Fd4RVrWbvoQ8VzNsDYtr78ghjhoU%3D')
@@ -26,28 +27,37 @@ describe("Reporting Test Page - US Disbursement", () => {
         })
 
         homePage.checkHomePage()
-
-        const optionMenu = 'Reporting'
-        const subMenuOption = 'CA Disbursement'
+        const optionMenu = 'Tools'
+        const subMenuOption = 'Previous Trx Log' 
+        
         homePage.goToOption(optionMenu, subMenuOption)
-        ACHInternalFileProcessingPage.checkACHInternalFileProcessingPage()
+
+        cloneCustomFieldsPage.checkCloneCustomFieldsPage()
     })
     
-    it("Check Reporting > US Disbursement - Search for Valid content", () => {
-        
+    it("Check Tools > Clone Custom Fields - Valid Search", () => {
 
-        ACHInternalFileProcessingPage.searchForDate("01/01/2022", "02/02/2023")
-        ACHInternalFileProcessingPage.checkResultsTable()
+        cloneCustomFieldsPage.searchMerchantID("2")
+        cloneCustomFieldsPage.checkResults()
+
+
+
+
+    });
+
+    it("Check Tools > Clone Custom Fields - invalid Search", () => {
+
+        cloneCustomFieldsPage.searchByDate("-2")
+        cloneCustomFieldsPage.checkNoResults()
+
+
 
 
     });
 
     
 
-  
-
     
-
 
 })
 

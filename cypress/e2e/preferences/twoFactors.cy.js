@@ -5,11 +5,11 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
+import addMerchantPage from '../../support/pages/manageMerchants/add' 
+import findMerchantPage from '../../support/pages/manageMerchants/find' 
 
-import ACHInternalFileProcessingPage from '../../support/pages/reporting/ACHInternalFileProcessing' 
 
-
-describe("Reporting Test Page - US Disbursement", () => {
+describe("Manage Merchants Test Page - Add", () => {
 
     beforeEach(function () {
         cy.setCookie('rememberDevice_537194149','%241%248YsD9YlSwthVcWMKQn4tNw%3D%3D%24M7qyYxm5nHRVfxZ%2Fd4RVrWbvoQ8VzNsDYtr78ghjhoU%3D')
@@ -26,21 +26,36 @@ describe("Reporting Test Page - US Disbursement", () => {
         })
 
         homePage.checkHomePage()
-
-        const optionMenu = 'Reporting'
-        const subMenuOption = 'CA Disbursement'
-        homePage.goToOption(optionMenu, subMenuOption)
-        ACHInternalFileProcessingPage.checkACHInternalFileProcessingPage()
-    })
+        const optionMenu = 'Preferences'
+        const subMenuOption = 'Two Factors'
+       
     
-    it("Check Reporting > US Disbursement - Search for Valid content", () => {
-        
+        homePage.goToOption(optionMenu, subMenuOption)
+        addMerchantPage.checkaddMerchantPage()
+    })
 
-        ACHInternalFileProcessingPage.searchForDate("01/01/2022", "02/02/2023")
-        ACHInternalFileProcessingPage.checkResultsTable()
+    it("Check Manage Merchants > Add - Add Merchant", () => {
+
+        addMerchantPage.createNewMerchant()
 
 
     });
+
+    it("Check Manage Merchants > Add - Check invalid Email", () => {
+
+        addMerchantPage.checkInvalidEmailError()
+
+
+    });
+
+    it("Check Manage Merchants > Add - Check required fields", () => {
+
+        addMerchantPage.requiredFieldError()
+
+
+    });
+
+    
 
     
 
