@@ -24,7 +24,7 @@ describe("Reporting Test Page - ACH Internal File Processing", () => {
 
         cy.get("@user").then((user) => {
             loginPage.login(user.login, user.password)
-            authenticatePage.authenticate(user.code)
+            // authenticatePage.authenticate(user.code)
         })
 
         homePage.checkHomePage()

@@ -1,9 +1,32 @@
 # gateway-cypress-ui-framework
 
-## Cypress Automation Test Framework
+## Cypress Software Requirement
+
+    Node JS: Have Node.js 12 or 14 or else any higher version than this installed https://nodejs.org/en
+    Yarn: You can also install cypress using yarn package manager.  https://yarnpkg.com/getting-started/install
+
+Corepack is included by default with all Node.js installs, but is currently opt-in. To enable it, run the following command As ADMIN:
+
 ---
 
+ `corepack enable` 
+
+---
+
+
+## Cypress Automation Test Framework
 1. First clone the project from our (this) repository
+
+YARN:
+
+2. Run `yarn add -D` command 
+3. And run `yarn add -D cypress`. Now, node package manager (npm) will download Cypress in your local machine.  
+4. Run `yarn test` to start Cypress GUI.
+--- 
+
+NPM:
+---
+
 2. Run `npm install` command 
 3. And run `npm install cypress --save-dev`. Now, node package manager (npm) will download Cypress in your local machine.  
 4. Run `npx cypress open` to start Cypress GUI.
@@ -80,3 +103,11 @@ Cypress allows you to pass in [--environment variables](https://docs.cypress.io/
 
 `npx cypress run` to run everything
 `npx cypress run --spec=cypress/e2e/[ADD_FOLDER]`  to run a specific folder
+
+
+# How to run cypress test in parallel mode
+
+By Default, the project is already setup to run in parallel mode using Cypress-Parallel dependency and using the command "cypress-parallel -d cypress/e2e/[FOLDER] -t 2 -s run", you can lso use the shortcut bellow to run parallel tests after you choose the folder
+
+`yarn cy:parallel` 
+

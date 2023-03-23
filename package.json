@@ -4,7 +4,9 @@
   "description": "Automation Test Project for Repay Gateway",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress open"
+    "test": "npx cypress open",
+    "run": "npx cypress run --headed",
+    "cy:parallel": "cypress-parallel -d cypress/e2e/manageMerchants -t 2 -s run"
   },
   "keywords": [
     "cypress",
@@ -25,5 +27,9 @@
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.2.2",
     "mochawesome-report-generator": "^6.2.0"
+  },
+  "dependencies": {
+    "cypress-multi-reporters": "^1.6.3",
+    "cypress-parallel": "^0.12.0"
   }
 }
