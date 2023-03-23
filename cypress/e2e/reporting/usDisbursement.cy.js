@@ -14,9 +14,12 @@ import ACHInternalFileProcessingPage from '../../support/pages/reporting/ACHInte
 describe("Reporting Test Page - US Disbursement", () => {
 
     beforeEach(function () {
-        cy.setCookie('rememberDevice_537194149','%241%248YsD9YlSwthVcWMKQn4tNw%3D%3D%24M7qyYxm5nHRVfxZ%2Fd4RVrWbvoQ8VzNsDYtr78ghjhoU%3D')
-
         cy.fixture("gatewayCredentials").as('user')
+
+        cy.get("@user").then((user) => {
+            cy.setCookie(user.cookiesName,user.cookiesValue)
+
+        })
         loginPage.goToLoginPage()
 
         

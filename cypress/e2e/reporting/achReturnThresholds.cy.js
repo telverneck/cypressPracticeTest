@@ -11,9 +11,12 @@ import achReturnThresholdsPage from '../../support/pages/reporting/ACHreturnThre
 describe("Reporting Test Page", () => {
 
     beforeEach(function () {
-        cy.setCookie('rememberDevice_537194149','%241%248YsD9YlSwthVcWMKQn4tNw%3D%3D%24M7qyYxm5nHRVfxZ%2Fd4RVrWbvoQ8VzNsDYtr78ghjhoU%3D')
-
         cy.fixture("gatewayCredentials").as('user')
+
+        cy.get("@user").then((user) => {
+            cy.setCookie(user.cookiesName,user.cookiesValue)
+
+        })
         loginPage.goToLoginPage()
 
         
@@ -35,7 +38,7 @@ describe("Reporting Test Page", () => {
 
     it("Check Reporting > ACH Return Thresholds - Search for Valid content - Various date ranges, including reset and submit - CSV - One, several, all values", () => {
 
-        achReturnThresholdsPage.searchForDate("01/01/2022", "02/02/2023")
+        achReturnThresholdsPage.searchForDate("01/01/2024", "02/02/2023")
         achReturnThresholdsPage.checkResultsTable()
 
 
