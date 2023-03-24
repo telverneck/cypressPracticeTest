@@ -5,8 +5,7 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
-import addMerchantPage from '../../support/pages/manageMerchants/add' 
-import findMerchantPage from '../../support/pages/manageMerchants/find' 
+import twoFactorPage from '../../support/pages/preferences/twoFactor' 
 
 
 describe("Manage Merchants Test Page - Add", () => {
@@ -30,42 +29,20 @@ describe("Manage Merchants Test Page - Add", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Preferences'
-        const subMenuOption = 'Two Factors'
+        const subMenuOption = 'Two Factor'
        
     
         homePage.goToOption(optionMenu, subMenuOption)
-        addMerchantPage.checkaddMerchantPage()
     })
 
-    it("Check Manage Merchants > Add - Add Merchant", () => {
+    it("Check Two Factor Page > Check Alert info", () => {
 
-        addMerchantPage.createNewMerchant()
-
-
-    });
-
-    it("Check Manage Merchants > Add - Check invalid Email", () => {
-
-        addMerchantPage.checkInvalidEmailError()
-
-
-    });
-
-    it("Check Manage Merchants > Add - Check required fields", () => {
-
-        addMerchantPage.requiredFieldError()
+        twoFactorPage.checkTwoFactorPage()
 
 
     });
 
     
-
-    
-
-  
-
-    
-
 
 })
 

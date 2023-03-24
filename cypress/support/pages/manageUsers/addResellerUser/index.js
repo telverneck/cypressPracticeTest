@@ -16,10 +16,6 @@ let emailRequiredFieldError = '#RequiredFieldValidator4'
 let emailInvalidFieldError = '#RegularExpressionValidator1' 
 
 
-
-
-
-
 class addResellerUser {
 
 
@@ -74,9 +70,9 @@ class addResellerUser {
     }
 
     checkInvalidEmailError(){
-        actionsPage.inputIframeText(emailInput, "Test@Test.com")
-        clickSaveButton()
-        actionsPage.isIframeElementVisible(emailRequiredFieldError)
+        actionsPage.inputIframeText(emailInput, "Test@")
+        this.clickSaveButton()
+        actionsPage.isIframeElementVisible(emailInvalidFieldError)
 
 
     }

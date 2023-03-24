@@ -1,9 +1,47 @@
 # gateway-cypress-ui-framework
 
+## System requirements
+Operating System
+Cypress is a desktop application that is installed on your computer. The desktop application supports these operating systems:
+
+macOS 10.9 and above (Intel or Apple Silicon 64-bit (x64 or arm64))
+Linux Ubuntu 12.04 and above, Fedora 21 and Debian 8 (x86_64 or Arm 64-bit (x64 or arm64)) (see Linux Prerequisites down below)
+Windows 7 and above (64-bit only)
+Node.js
+If you're using npm to install Cypress, we support:
+
+Node.js 14.x
+Node.js 16.x
+Node.js 18.x and above
+Cypress generally aligns with Node's release schedule.
+
+Hardware
+When running Cypress locally, it should run comfortably on any machine that is capable of modern web development.
+
+When running Cypress in CI, however, some of the lower-tier configurations might not be able to run Cypress reliably, especially when recording videos or doing longer test runs.
+
+Some issues you might run into in CI that could be a sign of insufficient resources are:
+
+Exiting early during cypress run or abruptly closing (“crashing”)
+Frozen or missing frames in the video that is captured
+Increased runtime
+When running Cypress in CI, we recommend that you have the following hardware requirements:
+
+CPU
+2 CPUs minimum to run Cypress
+1 additional CPU if video recording is enabled
+1 additional CPU per process you run outside of Cypress, such as:
+App server (frontend)
+App server (backend)
+App database
+Any additional infrastructure (Redis, Kafka, etc..)
+Memory
+4GB minimum, 8GB+ for longer test runs
+
 ## Cypress Software Requirement
 
-    Node JS: Have Node.js 12 or 14 or else any higher version than this installed https://nodejs.org/en
-    Yarn: You can also install cypress using yarn package manager.  https://yarnpkg.com/getting-started/install
+    * Node JS: Have Node.js 12 or 14 or else any higher version than this installed https://nodejs.org/en
+    * Yarn: You can also install cypress using yarn package manager.  https://yarnpkg.com/getting-started/install
 
 Corepack is included by default with all Node.js installs, but is currently opt-in. To enable it, run the following command As ADMIN:
 

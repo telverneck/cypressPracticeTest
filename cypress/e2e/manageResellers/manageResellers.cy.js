@@ -41,6 +41,7 @@ describe("Manage Resellers Test Page", () => {
 
         findEditResellers.filterBy("EqualTo")
         findEditResellers.searchByName("test")
+        findEditResellers.checkResultsTable()
 
 
 
@@ -49,7 +50,9 @@ describe("Manage Resellers Test Page", () => {
     it("Check Manage Resellers > Find 2 or more columns - valid search", () => {
 
         findEditResellers.searchByName("test")
+        findEditResellers.checkResultsTable()
         findEditResellers.searchByID("1")
+        findEditResellers.checkResultsTable()
 
 
 
@@ -58,6 +61,7 @@ describe("Manage Resellers Test Page", () => {
     it("Check Manage Resellers > Find 1 column - Search for no results", () => {
 
         findEditResellers.searchByName("No results")
+        findEditResellers.checkNoResultsTable()
 
 
     });
@@ -65,7 +69,11 @@ describe("Manage Resellers Test Page", () => {
     it("Check Manage Resellers > Find 2 or more columns- Search for no results", () => {
 
         findEditResellers.searchByName("No results")
+        findEditResellers.checkNoResultsTable()
+
         findEditResellers.searchByID("No results")
+        findEditResellers.checkNoResultsTable()
+
 
 
     });
