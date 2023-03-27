@@ -6,7 +6,7 @@ import homePage from '../../support/pages/home'
 import authenticatePage from '../../support/pages/authentication'
 
 
-import ACHInternalFileProcessingPage from '../../support/pages/reporting/ACHInternalFileProcessing' 
+import caDisbursementPage from '../../support/pages/reporting/caDisbursement' 
 
 
 describe("Reporting Test Page - US Disbursement", () => {
@@ -33,14 +33,14 @@ describe("Reporting Test Page - US Disbursement", () => {
         const optionMenu = 'Reporting'
         const subMenuOption = 'CA Disbursement'
         homePage.goToOption(optionMenu, subMenuOption)
-        ACHInternalFileProcessingPage.checkACHInternalFileProcessingPage()
+        caDisbursementPage.checkcaDisbursementPage()
     })
     
     it("Check Reporting > US Disbursement - Search for Valid content", () => {
         
 
-        ACHInternalFileProcessingPage.searchForDate("01/01/2022", "02/02/2023")
-        ACHInternalFileProcessingPage.checkResultsTable()
+        caDisbursementPage.searchForDate("01/01/2022", "02/02/2023")
+        caDisbursementPage.checkResultsTable()
 
 
     });

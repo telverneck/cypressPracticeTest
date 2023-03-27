@@ -9,20 +9,19 @@ let endDatePicker = '#dtEnd_popupButton'
 let startTimePicker = '#dtStart_timePopupLink' 
 let endTimePicker = 'a#dtEnd_timePopupLink' 
 let inforAlert = '.rg-alert-info'
-let table = 'table#achFilesProcessedGrid_ctl00' 
-let tableResults = '#achFilesProcessedGrid tbody tr:nth-child(1)' 
-let tableNoResults = '.rgNoRecords div' 
+let table = 'table#gridDisbursements_ctl00' 
+let tableResults = 'table#gridDisbursements_ctl00 tbody tr:nth-child(1)' 
 
 
 
-
-class achInternalFileProcessing {
-
+class caDisbursementPage {
 
 
-    checkACHInternalFileProcessingPage() {
+
+    checkcaDisbursementPage() {
 
         cy.wait(2000) // waiting for spinner to disapears
+        actionsPage.elementIframeShouldContainText(ACHTransactionTitle, 'CA Disbursement Report')
 
         actionsPage.isIframeElementVisible(startDateInput)
         actionsPage.isIframeElementVisible(endDateInput)
@@ -34,19 +33,13 @@ class achInternalFileProcessing {
         actionsPage.isIframeElementVisible(endDatePicker)
         actionsPage.isIframeElementVisible(inforAlert)
         actionsPage.isIframeElementVisible(table)
+        actionsPage.isIframeElementVisible(tableResults)
         
         
     }
 
     checkResultsTable(){
         actionsPage.isIframeElementVisible(tableResults)
-
-    }
-
-    checkNoResultsTable(){
-        cy.wait(2000) // waiting for spinner to disapears
-        actionsPage.isIframeElementVisible(tableNoResults)
-
 
     }
     
@@ -59,4 +52,4 @@ class achInternalFileProcessing {
 
 }
 
-export default new achInternalFileProcessing()
+export default new caDisbursementPage()

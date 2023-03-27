@@ -38,7 +38,7 @@ describe("Reporting Test Page", () => {
 
     it("Check Reporting > ACH Return Thresholds - Search for Valid content - Various date ranges, including reset and submit - CSV - One, several, all values", () => {
 
-        achReturnThresholdsPage.searchForDate("01/01/2024", "02/02/2023")
+        achReturnThresholdsPage.searchForDate("01/01/2020", "02/02/2023")
         achReturnThresholdsPage.checkResultsTable()
 
 
