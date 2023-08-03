@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress open",
-    "run": "npx cypress run --headed",
+    "cy:run": "npx cypress run --headed",
     "cy:parallel": "cypress-parallel -d cypress/e2e/manageMerchants -t 2 -s run"
   },
   "keywords": [
