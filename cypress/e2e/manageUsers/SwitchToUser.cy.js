@@ -40,6 +40,7 @@ describe("Manage Users Test Page", () => {
 
         // findEditPage.clickRefreshButton()
         findEditPage.searchByName("1233177079")
+        findEditPage.clickFirstItem()
 
 
     });
