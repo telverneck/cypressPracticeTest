@@ -28,7 +28,7 @@ describe("Manage Users Test Page", () => {
         })
 
         homePage.checkHomePage()
-        const optionMenu = 'Manage Users'
+        const optionMenu = 'Manage Merchants'
         const subMenuOption = 'Find/Edit'
        
     
@@ -36,10 +36,10 @@ describe("Manage Users Test Page", () => {
         findEditPage.checkFindEditPage()
     })
 
-    it("Check Manage Users > findEditPage - Search for User", () => {
+    it("Check Manage Merchants > findEditPage - Search for User", () => {
 
         // findEditPage.clickRefreshButton()
-        findEditPage.searchByName("1233177079")
+        findEditPage.searchByName("E2E Tsys Test Merchant")
         findEditPage.clickFirstItem()
 
 
