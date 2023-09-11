@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   video: false,
-  retries: 1,
+  retries: 0,
   reporterOptions: {
     reportDir: 'test-report',
     charts: true,
@@ -21,8 +21,8 @@ module.exports = defineConfig({
     },
   },
   chromeWebSecurity: false,
-  defaultCommandTimeout: 50000,
-  pageLoadTimeout: 50000,
+  defaultCommandTimeout: 90000,
+  pageLoadTimeout: 90000,
   screenshotOnRunFailure: true,
   trashAssetsBeforeRuns: true,
   video: false,

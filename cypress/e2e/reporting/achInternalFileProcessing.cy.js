@@ -8,7 +8,7 @@ import authenticatePage from '../../support/pages/authentication'
 import achReturnThresholdsPage from '../../support/pages/reporting/ACHreturnThresholds' 
 
 
-import ACHInternalFileProcessingPage from '../../support/pages/reporting/ACHInternalFileProcessing' 
+import aCHInternalFileProcessingPage from '../../support/pages/reporting/ACHInternalFileProcessing' 
 
 
 describe("Reporting Test Page - ACH Internal File Processing", () => {
@@ -34,25 +34,30 @@ describe("Reporting Test Page - ACH Internal File Processing", () => {
 
         // START: Due a bug in the system, this step is necessary in order to run the test
         const optionMenu = 'Reporting'
-        const subMenuOption = 'ACH Return Thresholds'
+        const subMenuOption = 'ACH Internal File Processing'
 
         
         
         homePage.goToOption(optionMenu, subMenuOption)
-        achReturnThresholdsPage.checkAchReturnThresholdsPage()
+        aCHInternalFileProcessingPage.checkACHInternalFileProcessingPage()
 
         // END: Due a bug in the system, this step is necessary in order to run the test
     })
     
     it("Check Reporting > ACH Internal File Processing - Search for Valid content", () => {
         
-        const optionMenu = 'Reporting'
-        const subMenuOption = 'ACH Internal File Processing'
-        homePage.goToOption(optionMenu, subMenuOption)
-        ACHInternalFileProcessingPage.checkACHInternalFileProcessingPage()
 
-        ACHInternalFileProcessingPage.searchForDate("01/01/2022", "02/02/2023")
-        ACHInternalFileProcessingPage.checkResultsTable()
+        aCHInternalFileProcessingPage.searchForDate("01/01/2022", "02/02/2023")
+        aCHInternalFileProcessingPage.checkResultsTable()
+
+
+    });
+
+    it("Check Reporting > ACH Internal File Processing - Search for inValid content", () => {
+        
+
+        aCHInternalFileProcessingPage.searchForDate("01/01/2022", "02/02/2020")
+        aCHInternalFileProcessingPage.checkNoResultsTable()
 
 
     });

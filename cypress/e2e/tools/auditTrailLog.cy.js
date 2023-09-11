@@ -8,7 +8,7 @@ import authenticatePage from '../../support/pages/authentication'
 import auditTrailLogPage from '../../support/pages/tools/auditTrailLog' 
 
 
-describe("Manage Merchants Test Page", () => {
+describe("Tools Test Page - Audit Trail Log", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -42,8 +42,6 @@ describe("Manage Merchants Test Page", () => {
         auditTrailLogPage.checkResults()
 
 
-
-
     });
 
     it("Check Tools > Audit Trail Log - invalid Search", () => {
@@ -52,15 +50,11 @@ describe("Manage Merchants Test Page", () => {
         auditTrailLogPage.checkNoResults()
 
 
-
-
     });
 
     it("Check Tools > Audit Trail Log - uncheck audit Filters", () => {
 
         auditTrailLogPage.uncheckAuditFilters()
-
-
 
 
     });

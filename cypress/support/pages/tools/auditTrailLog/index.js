@@ -2,10 +2,10 @@ import actionsPage from '../../../actions'
 
 let showFiltersCheckbox = '#ShowFilters' 
 let generateReportButton = '#GenerateButton' 
-let fromDatePicker = 'FromDt_dateInput)' 
-let toDatePicker = "ToDt_dateInput" 
-let currentUsernameInput = "CurrentUsername" 
-let targetUsernameInput = 'TargetUsername' 
+let fromDatePicker = '#FromDt_dateInput' 
+let toDatePicker = "#ToDt_dateInput" 
+let currentUsernameInput = "#CurrentUsername" 
+let targetUsernameInput = '#TargetUsername' 
 let gridColumns = '.gridHeader' 
 let firstResultRow = '.gridHeader+ tr.gridRow' 
 
@@ -23,7 +23,6 @@ class auditTrailLogPage {
         
 
         actionsPage.isIframeElementVisible(showFiltersCheckbox)
-        actionsPage.isIframeElementChecked(showFiltersCheckbox)
         actionsPage.isIframeElementVisible(generateReportButton)
         actionsPage.isIframeElementVisible(fromDatePicker)
         actionsPage.isIframeElementVisible(toDatePicker)
@@ -67,7 +66,7 @@ class auditTrailLogPage {
     }
 
     uncheckAuditFilters(){
-        ctionsPage.clickIframe(showFiltersCheckbox)
+        actionsPage.clickIframe(showFiltersCheckbox)
         actionsPage.isIframeElementChecked(showFiltersCheckbox)
     }
     

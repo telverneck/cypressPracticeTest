@@ -5,12 +5,11 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
-import addMerchantPage from '../../support/pages/manageMerchants/add' 
 
-import cloneCustomFieldsPage from '../../support/pages/tools/cloneCustomFields' 
+import achAuthFormsPage from '../../support/pages/tools/achAuthForms' 
 
 
-describe("Tools Test Page", () => {
+describe("Tools Test Page - Ach Auth Form", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -31,35 +30,20 @@ describe("Tools Test Page", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Tools'
-        const subMenuOption = 'Previous Trx Log' 
+        const subMenuOption = 'ACH Auth Forms' 
         
         homePage.goToOption(optionMenu, subMenuOption)
 
-        cloneCustomFieldsPage.checkCloneCustomFieldsPage()
+        achAuthFormsPage.checkachAuthFormsPage()
     })
     
-    it("Check Tools > Clone Custom Fields - Valid Search", () => {
-
-        cloneCustomFieldsPage.searchMerchantID("2")
-        cloneCustomFieldsPage.checkResults()
+    it("Check Tools > ACH Auth Forms", () => {
 
 
 
+            //Screen present some issues that prevents futher testing
 
     });
-
-    it("Check Tools > Clone Custom Fields - invalid Search", () => {
-
-        cloneCustomFieldsPage.searchByDate("-2")
-        cloneCustomFieldsPage.checkNoResults()
-
-
-
-
-    });
-
-    
-
     
 
 })

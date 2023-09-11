@@ -7,10 +7,10 @@ import authenticatePage from '../../support/pages/authentication'
 
 import addMerchantPage from '../../support/pages/manageMerchants/add' 
 
-import cloneCustomFieldsPage from '../../support/pages/tools/cloneCustomFields' 
+import paymentPage from '../../support/pages/tools/payment' 
 
 
-describe("Tools Test Page", () => {
+describe("Tools Test Page - Payment Method Validation", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -31,32 +31,25 @@ describe("Tools Test Page", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Tools'
-        const subMenuOption = 'Clone Custom Fields' 
+        const subMenuOption = 'Payment Method Validation' 
         
         homePage.goToOption(optionMenu, subMenuOption)
 
-        cloneCustomFieldsPage.checkCloneCustomFieldsPage()
+        paymentPage.checkPaymentMethodValidationPage()
     })
     
-    it("Check Tools > Clone Custom Fields - Valid Search", () => {
+    it("Check Tools > Payment Method Validation - Valid Search", () => {
 
-        cloneCustomFieldsPage.searchMerchantID("2")
-        cloneCustomFieldsPage.checkResults()
+        paymentPage.selectAnyMerchant()
 
-
-
-
-    });
-
-    it("Check Tools > Clone Custom Fields - invalid Search", () => {
-
-        cloneCustomFieldsPage.searchByDate("-2")
-        cloneCustomFieldsPage.checkNoResults()
+        //TODO: check what supposed to be displayed
 
 
 
 
     });
+
+   
 
     
 

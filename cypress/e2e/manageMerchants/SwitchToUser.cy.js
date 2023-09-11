@@ -5,12 +5,10 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
-import addMerchantPage from '../../support/pages/manageMerchants/add' 
-
-import manualSettlementPage from '../../support/pages/tools/manualSettlement' 
+import findEditPage from '../../support/pages/manageUsers/findEdit' 
 
 
-describe("Tools Test Page - Manual Settlement", () => {
+describe("Manage Users Test Page", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -30,37 +28,22 @@ describe("Tools Test Page - Manual Settlement", () => {
         })
 
         homePage.checkHomePage()
-        const optionMenu = 'Tools'
-        const subMenuOption = 'Manual Settlement' 
-        
-        
+        const optionMenu = 'Manage Merchants'
+        const subMenuOption = 'Find/Edit'
+       
+    
         homePage.goToOption(optionMenu, subMenuOption)
-
-        manualSettlementPage.checkManualSettlementPage()
+        findEditPage.checkFindEditPage()
     })
-    
-    it("Check Tools > Manual Settlement - Valid Search", () => {
 
-        manualSettlementPage.searchByDate("2/1/2020", "2/1/2025")
-        manualSettlementPage.checkResults()
+    it("Check Manage Merchants > findEditPage - Search for User", () => {
 
-
-
-
-    });
-
-    it("Check Tools > Manual Settlement - invalid Search", () => {
-
-        manualSettlementPage.clickRebindButton()
-        manualSettlementPage.searchByDate("2/1/2020", "2/1/2019")
-        manualSettlementPage.checkNoResults()
-
-
+        // findEditPage.clickRefreshButton()
+        findEditPage.searchByName("E2E Tsys Test Merchant")
+        findEditPage.clickFirstItem()
 
 
     });
-
-    
 
     
 

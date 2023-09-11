@@ -8,7 +8,7 @@ import authenticatePage from '../../support/pages/authentication'
 import achReturnThresholdsPage from '../../support/pages/reporting/ACHreturnThresholds' 
 
 
-import ACHInternalFileProcessingPage from '../../support/pages/reporting/ACHInternalFileProcessing' 
+import usDisbursementPage from '../../support/pages/reporting/usDisbursement' 
 
 
 describe("Reporting Test Page - US Disbursement", () => {
@@ -35,14 +35,14 @@ describe("Reporting Test Page - US Disbursement", () => {
         const optionMenu = 'Reporting'
         const subMenuOption = 'US Disbursement'
         homePage.goToOption(optionMenu, subMenuOption)
-        ACHInternalFileProcessingPage.checkACHInternalFileProcessingPage()
+        usDisbursementPage.checkUsDisbursementPage()
     })
     
     it("Check Reporting > US Disbursement - Search for Valid content", () => {
         
 
-        ACHInternalFileProcessingPage.searchForDate("01/01/2022", "02/02/2023")
-        ACHInternalFileProcessingPage.checkResultsTable()
+        usDisbursementPage.searchForDate("01/01/2022", "02/02/2023")
+        usDisbursementPage.checkResultsTable()
 
 
     });

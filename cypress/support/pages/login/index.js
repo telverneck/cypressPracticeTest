@@ -8,7 +8,7 @@ let loginButton = '#Login1_LoginButton'
 let bannerImage = '#LogoImage'
 let errorMessageToast = "td[style='color:Red;']"
 let forgotPasswordLink = '#Login1_PasswordRecoveryLink' 
-
+// private forgotPasswordLink2 = cy.get('#Login1_PasswordRecoveryLink')
 
 class LoginPage {
 

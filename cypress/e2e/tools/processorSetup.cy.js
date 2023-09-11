@@ -7,10 +7,10 @@ import authenticatePage from '../../support/pages/authentication'
 
 import addMerchantPage from '../../support/pages/manageMerchants/add' 
 
-import cloneCustomFieldsPage from '../../support/pages/tools/cloneCustomFields' 
+import processorSetupPage from '../../support/pages/tools/processorSetup' 
 
 
-describe("Tools Test Page", () => {
+describe("Tools Test Page - Processor Setup", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -31,36 +31,22 @@ describe("Tools Test Page", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Tools'
-        const subMenuOption = 'Previous Trx Log' 
+        const subMenuOption = 'Processor Setup' 
         
         homePage.goToOption(optionMenu, subMenuOption)
 
-        cloneCustomFieldsPage.checkCloneCustomFieldsPage()
+        processorSetupPage.checkProcessorSetupPagePage()
     })
     
-    it("Check Tools > Clone Custom Fields - Valid Search", () => {
+    it("Check Tools > Processor Setup - Valid Page", () => {
 
-        cloneCustomFieldsPage.searchMerchantID("2")
-        cloneCustomFieldsPage.checkResults()
-
-
-
-
-    });
-
-    it("Check Tools > Clone Custom Fields - invalid Search", () => {
-
-        cloneCustomFieldsPage.searchByDate("-2")
-        cloneCustomFieldsPage.checkNoResults()
-
+        processorSetupPage.selectFirstProcessor()
+        // processorSetupPage.clickSaveProcessor()
 
 
 
     });
 
-    
-
-    
 
 })
 

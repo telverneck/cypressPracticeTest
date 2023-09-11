@@ -13,6 +13,9 @@ let resetButton = "input[value='Reset']"
 let messageInfoAlert =  ".succeedText"
 let requiredFieldError = "#_RequiredFieldValidator2" 
 let emailRequiredFieldError = "#Regularexpressionvalidator4" 
+let selectMerchartSelect = "select[name='_ResellerList']" 
+let chooseMerchantButton = "#CreateButton" 
+
 
 
 
@@ -21,8 +24,13 @@ let emailRequiredFieldError = "#Regularexpressionvalidator4"
 class addMerchant {
 
 
+    chooseAnyMerchant(){
+        actionsPage.selectValueFromList(selectMerchartSelect, '100')
+        actionsPage.clickIframe(chooseMerchantButton)
 
-    checkaddMerchantPage() {
+}
+
+    checkAddMerchantPage() {
 
         cy.wait(2000) // waiting for spinner to disapears
         

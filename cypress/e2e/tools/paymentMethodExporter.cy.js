@@ -5,9 +5,7 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
-import addMerchantPage from '../../support/pages/manageMerchants/add' 
-
-import cloneCustomFieldsPage from '../../support/pages/tools/cloneCustomFields' 
+import paymentsPage from '../../support/pages/tools/payment' 
 
 
 describe("Tools Test Page", () => {
@@ -31,34 +29,25 @@ describe("Tools Test Page", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Tools'
-        const subMenuOption = 'Clone Custom Fields' 
+        const subMenuOption = 'Payment Method Exporter' 
         
         homePage.goToOption(optionMenu, subMenuOption)
 
-        cloneCustomFieldsPage.checkCloneCustomFieldsPage()
+        paymentsPage.checkPaymentExporterPage()
     })
     
-    it("Check Tools > Clone Custom Fields - Valid Search", () => {
-
-        cloneCustomFieldsPage.searchMerchantID("2")
-        cloneCustomFieldsPage.checkResults()
-
-
-
+    it("Check Tools > Payment Method Exporter - Valid Search", () => {
+        paymentsPage.searchPaymentExporterByID(1)
 
     });
 
-    it("Check Tools > Clone Custom Fields - invalid Search", () => {
-
-        cloneCustomFieldsPage.searchByDate("-2")
-        cloneCustomFieldsPage.checkNoResults()
-
-
-
+    it("Check Tools > Payment Method Exporter - Invalid Search", () => {
+        paymentsPage.searchPaymentExporterByID(3242343243243242344324)
+        // paymentsPage.searchPaymentExporterByID(3242343243243242344324) // to pass, this needs to run twice. 
+        paymentsPage.checkErrorMessage()
 
     });
 
-    
 
     
 

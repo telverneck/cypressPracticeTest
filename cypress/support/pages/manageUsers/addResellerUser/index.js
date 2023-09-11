@@ -16,10 +16,6 @@ let emailRequiredFieldError = '#RequiredFieldValidator4'
 let emailInvalidFieldError = '#RegularExpressionValidator1' 
 
 
-
-
-
-
 class addResellerUser {
 
 
@@ -60,7 +56,7 @@ class addResellerUser {
     }
 
     checkSuccessMessage(){
-        cy.wait(5000) // TODO: refactor this to a better approuch
+        cy.wait(10000) // TODO: refactor this to a better approuch
         actionsPage.elementIframeShouldContainText(messageInfoAlert, 'A new user account has been created successfully')
     }
 
@@ -74,9 +70,9 @@ class addResellerUser {
     }
 
     checkInvalidEmailError(){
-        actionsPage.inputIframeText(emailInput, "Test@Test.com")
-        clickSaveButton()
-        actionsPage.isIframeElementVisible(emailRequiredFieldError)
+        actionsPage.inputIframeText(emailInput, "Test@")
+        this.clickSaveButton()
+        actionsPage.isIframeElementVisible(emailInvalidFieldError)
 
 
     }

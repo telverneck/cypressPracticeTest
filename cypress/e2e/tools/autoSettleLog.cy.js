@@ -5,10 +5,10 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
-import auditTrailLogPage from '../../support/pages/tools/auditTrailLog' 
+import autoSettleLogPage from '../../support/pages/tools/autoSettlerLog' 
 
 
-describe("Manage Merchants Test Page", () => {
+describe("Tools Test Page - Auto Settle Log", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -29,36 +29,35 @@ describe("Manage Merchants Test Page", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Tools'
-        const subMenuOption = 'Audit Settle Log' 
+        const subMenuOption = 'Auto Settle Log' 
         
         
         homePage.goToOption(optionMenu, subMenuOption)
-        auditTrailLogPage.checkAuditTrailLogPage()
+        autoSettleLogPage.checkAutoSettlerLogPage()
     })
     
-    it("Check Tools > Audit Trail Log - Valid Search", () => {
+    it("Check Tools > Auto Settle Log - Valid Search", () => {
 
-        auditTrailLogPage.searchByDate("2/1/2020", "2/1/2025")
-        auditTrailLogPage.checkResults()
-
-
-
-
-    });
-
-    it("Check Tools > Audit Trail Log - invalid Search", () => {
-
-        auditTrailLogPage.searchByDate("2/1/2020", "2/1/2019")
-        auditTrailLogPage.checkNoResults()
+        autoSettleLogPage.searchByDate("2/1/2020", "2/1/2025")
+        autoSettleLogPage.checkResults()
 
 
 
 
     });
 
-    it("Check Tools > Audit Trail Log - uncheck audit Filters", () => {
+    it("Check Tools > Auto Settle Log - invalid Search", () => {
 
-        auditTrailLogPage.uncheckAuditFilters()
+        autoSettleLogPage.searchByDate("2/1/2020", "2/1/2019")
+        autoSettleLogPage.checkNoResults()
+
+
+
+    });
+
+    it("Check Tools > Auto Settle Log - uncheck audit Filters", () => {
+
+        autoSettleLogPage.uncheckAuditFilters()
 
 
 

@@ -5,12 +5,10 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
-import addMerchantPage from '../../support/pages/manageMerchants/add' 
-
-import cloneCustomFieldsPage from '../../support/pages/tools/cloneCustomFields' 
+import systemInfoPage from '../../support/pages/tools/systemInfo' 
 
 
-describe("Tools Test Page", () => {
+describe("Tools Test Page - System Info", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -31,33 +29,22 @@ describe("Tools Test Page", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Tools'
-        const subMenuOption = 'Previous Trx Log' 
+        const subMenuOption = 'System Info' 
         
         homePage.goToOption(optionMenu, subMenuOption)
 
-        cloneCustomFieldsPage.checkCloneCustomFieldsPage()
+        systemInfoPage.checsystemInfoPage()
     })
     
-    it("Check Tools > Clone Custom Fields - Valid Search", () => {
+    it("Check Tools > System Info - Valid System Info Page", () => {
 
-        cloneCustomFieldsPage.searchMerchantID("2")
-        cloneCustomFieldsPage.checkResults()
-
-
+        systemInfoPage.clickValidatePasswordButton()
+        systemInfoPage.checkErrorMessage()
 
 
     });
 
-    it("Check Tools > Clone Custom Fields - invalid Search", () => {
-
-        cloneCustomFieldsPage.searchByDate("-2")
-        cloneCustomFieldsPage.checkNoResults()
-
-
-
-
-    });
-
+    
     
 
     
