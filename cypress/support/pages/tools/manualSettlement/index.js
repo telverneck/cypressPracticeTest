@@ -5,6 +5,9 @@ let rebindButton = '#btnRebind'
 let firstResultRow = '.rgRow:nth-child(1)' 
 let fromDatePicker = '#dtStart_dateInput' 
 let toDatePicker = '#dtEnd_dateInput' 
+let gridColumns = '#gridManualSettle_ctl00__0' 
+let noResults = '.rgNoRecords' 
+
 
 
 class manualSettlementPage {
@@ -47,8 +50,7 @@ class manualSettlementPage {
 
     checkNoResults(){
         cy.wait(5000) // waiting for spinner to disapears
-        actionsPage.isIframeElementVisible(gridColumns)
-        actionsPage.isIframeElementNotVisible(firstResultRow)
+        actionsPage.isIframeElementVisible(noResults)
 
 
     }

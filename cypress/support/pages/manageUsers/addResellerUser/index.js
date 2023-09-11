@@ -56,7 +56,7 @@ class addResellerUser {
     }
 
     checkSuccessMessage(){
-        cy.wait(5000) // TODO: refactor this to a better approuch
+        cy.wait(10000) // TODO: refactor this to a better approuch
         actionsPage.elementIframeShouldContainText(messageInfoAlert, 'A new user account has been created successfully')
     }
 

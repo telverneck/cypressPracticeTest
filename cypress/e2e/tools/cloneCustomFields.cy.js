@@ -50,7 +50,7 @@ describe("Tools Test Page", () => {
 
     it("Check Tools > Clone Custom Fields - invalid Search", () => {
 
-        cloneCustomFieldsPage.searchByDate("-2")
+        cloneCustomFieldsPage.searchMerchantID("-2")
         cloneCustomFieldsPage.checkNoResults()
 
 

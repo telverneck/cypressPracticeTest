@@ -26,7 +26,7 @@ class cloneCustomFieldsPage {
     }
     
     clickSearchButton(){
-        actionsPage.clickIframe(rebindButton)
+        actionsPage.clickIframe(searchButton)
     }
     
     
@@ -35,6 +35,8 @@ class cloneCustomFieldsPage {
     searchMerchantID(ID){
         actionsPage.inputIframeText(merchantIdInput, ID)
         this.clickSearchButton()
+        cy.wait(5000) // waiting for spinner to disapears
+
         
         
     }

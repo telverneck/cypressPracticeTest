@@ -10,7 +10,7 @@ import addMerchantPage from '../../support/pages/manageMerchants/add'
 import manualSettlementPage from '../../support/pages/tools/manualSettlement' 
 
 
-describe("Manage Merchants Test Page", () => {
+describe("Tools Test Page - Manual Settlement", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -34,16 +34,12 @@ describe("Manage Merchants Test Page", () => {
         const subMenuOption = 'Manual Settlement' 
         
         
-        homePage.goToOption("Manage Merchants", "Add")
-
-        addMerchantPage.checkaddMerchantPage()
-        
         homePage.goToOption(optionMenu, subMenuOption)
 
         manualSettlementPage.checkManualSettlementPage()
     })
     
-    it("Check Tools > Audit Trail Log - Valid Search", () => {
+    it("Check Tools > Manual Settlement - Valid Search", () => {
 
         manualSettlementPage.searchByDate("2/1/2020", "2/1/2025")
         manualSettlementPage.checkResults()
@@ -53,7 +49,7 @@ describe("Manage Merchants Test Page", () => {
 
     });
 
-    it("Check Tools > Audit Trail Log - invalid Search", () => {
+    it("Check Tools > Manual Settlement - invalid Search", () => {
 
         manualSettlementPage.clickRebindButton()
         manualSettlementPage.searchByDate("2/1/2020", "2/1/2019")

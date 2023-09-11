@@ -10,7 +10,7 @@ import addMerchantPage from '../../support/pages/manageMerchants/add'
 import batchExceptionManagerPage from '../../support/pages/tools/batchExceptionManager' 
 
 
-describe("Manage Merchants Test Page", () => {
+describe("Tools Test Page - Batch Exception Manager", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -31,25 +31,26 @@ describe("Manage Merchants Test Page", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Tools'
-        const subMenuOption = 'Manual Settlement' 
+        const subMenuOption = 'Batch Exception Manager' 
         
-        
-        homePage.goToOption("Manage Merchants", "Add")
-
-        addMerchantPage.checkaddMerchantPage()
         
         homePage.goToOption(optionMenu, subMenuOption)
 
         batchExceptionManagerPage.checkBatchExceptionManagerPage()
     })
     
-    it("Check Tools > Audit Trail Log - Valid Search", () => {
+    it("Check Tools > Batch Exception Manager - Check Move Button", () => {
 
-        batchExceptionManagerPage.searchByDate("2/1/2020", "2/1/2025")
-        batchExceptionManagerPage.checkResults()
+        batchExceptionManagerPage.clickMoveSelectedButton()
+        // TODO: Add Next behavior here
 
 
+    });
 
+    it("Check Tools > Batch Exception Manager - Check Settlement Button", () => {
+
+        batchExceptionManagerPage.clickSubmitSettlementButton()
+        // TODO: Add Next behavior here
 
     });
 

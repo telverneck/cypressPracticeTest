@@ -6,6 +6,7 @@
   "scripts": {
     "test": "npx cypress open",
     "cy:run": "npx cypress run --headed",
+    "cy:regression": "npx cypress run",
     "cy:parallel": "cypress-parallel -d cypress/e2e/manageMerchants -t 2 -s run"
   },
   "keywords": [

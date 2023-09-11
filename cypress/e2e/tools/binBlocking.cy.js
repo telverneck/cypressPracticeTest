@@ -7,7 +7,7 @@ import authenticatePage from '../../support/pages/authentication'
 
 import addMerchantPage from '../../support/pages/manageMerchants/add' 
 
-import cloneCustomFieldsPage from '../../support/pages/tools/cloneCustomFields' 
+import binBlockingPage from '../../support/pages/tools/binBlocking' 
 
 
 describe("Tools Test Page", () => {
@@ -31,32 +31,24 @@ describe("Tools Test Page", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Tools'
-        const subMenuOption = 'Clone Custom Fields' 
+        const subMenuOption = 'Bin Blocking' 
         
         homePage.goToOption(optionMenu, subMenuOption)
 
-        cloneCustomFieldsPage.checkCloneCustomFieldsPage()
+        binBlockingPage.checkbinBlockingPage()
     })
     
-    it("Check Tools > Clone Custom Fields - Valid Search", () => {
+    it("Check Tools > Bin Blocking - Check Rules and mandatory fields", () => {
 
-        cloneCustomFieldsPage.searchMerchantID("2")
-        cloneCustomFieldsPage.checkResults()
-
-
-
-
+        binBlockingPage.clickAddRule()
+        binBlockingPage.clickSave()
+        binBlockingPage.checkErrorMessage()
+        binBlockingPage.clickCancel()
+       
+        
     });
 
-    it("Check Tools > Clone Custom Fields - invalid Search", () => {
-
-        cloneCustomFieldsPage.searchByDate("-2")
-        cloneCustomFieldsPage.checkNoResults()
-
-
-
-
-    });
+    
 
     
 

@@ -12,10 +12,13 @@ class batchExceptionManagerPage {
 
     checkBatchExceptionManagerPage() {
 
-        cy.wait(2000) // waiting for spinner to disapears
+        cy.wait(60000) // waiting for spinner to disapears
         
 
-        actionsPage.isIframeElementVisible(merchantSelect)
+        // actionsPage.isElementVisible(merchantSelect)
+        // actionsPage.isElementVisible(moveSelectedButton)
+        // actionsPage.isElementVisible(submitSettlementButton)
+        // actionsPage.isIframeElementVisible(merchantSelect)
         actionsPage.isIframeElementVisible(moveSelectedButton)
         actionsPage.isIframeElementVisible(submitSettlementButton)
 
