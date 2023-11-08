@@ -7,6 +7,7 @@ let toDatePicker = "#ToDt_dateInput"
 let usernameInput = "#Username" 
 let gridColumns = '#DataGrid1' 
 let firstResultRow = '.gridHeader+ tr.gridRow' 
+let errorMessageDate = '#Message.errorText'
 
 
 
@@ -49,6 +50,13 @@ class AutoSettlerLogPage {
         // actionsPage.isIframeElementVisible(firstResultRow)
 
 
+
+    }
+
+    checkErrorMessage(){
+        cy.wait(5000) // waiting for spinner to disapears
+
+        actionsPage.isIframeElementVisible(errorMessageDate)
 
     }
 

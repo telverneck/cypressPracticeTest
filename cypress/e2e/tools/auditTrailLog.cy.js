@@ -38,7 +38,7 @@ describe("Tools Test Page - Audit Trail Log", () => {
     
     it("Check Tools > Audit Trail Log - Valid Search", () => {
 
-        auditTrailLogPage.searchByDate("2/1/2020", "2/1/2025")
+        auditTrailLogPage.searchByDate("2/1/2023", "2/1/2023")
         auditTrailLogPage.checkResults()
 
 
@@ -46,8 +46,8 @@ describe("Tools Test Page - Audit Trail Log", () => {
 
     it("Check Tools > Audit Trail Log - invalid Search", () => {
 
-        auditTrailLogPage.searchByDate("2/1/2020", "2/1/2019")
-        auditTrailLogPage.checkNoResults()
+        auditTrailLogPage.searchByDate("2/1/2018", "2/1/2023")
+        auditTrailLogPage.checkErrorMessage()
 
 
     });

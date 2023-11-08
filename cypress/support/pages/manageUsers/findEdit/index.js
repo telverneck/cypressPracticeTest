@@ -12,7 +12,7 @@ let calendarButton = ".rcCalPopup"
 let filterButton = ".rgFilter" 
 let firstItem = "tbody tr.rgRow a#grid_find_user2_ctl00_ctl04_UserLink , tbody tr.rgRow #RadGrid1_ctl00_ctl04_gbcViewMerchantButton" 
 
-
+let loginAsDefaultLink = "//span[contains(text(),'Login as Default')]"
 
 
 
@@ -55,6 +55,11 @@ class findEdit {
     clickRefreshButton(){
         actionsPage.clickIframe(refreshButton)
     }
+
+    clickLoginAsDefault(){
+        actionsPage.clickIframeXpath(loginAsDefaultLink)
+    }
+
 
     
     

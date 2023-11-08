@@ -12,7 +12,7 @@ let inforAlert = '.rg-alert-info'
 let table = 'table#achFilesProcessedGrid_ctl00' 
 let tableResults = '#achFilesProcessedGrid tbody tr:nth-child(1)' 
 let tableNoResults = '.rgNoRecords div' 
-
+let errorMessageDate = '#Message.errorText'
 
 
 
@@ -47,6 +47,13 @@ class achInternalFileProcessing {
         cy.wait(2000) // waiting for spinner to disapears
         actionsPage.isIframeElementVisible(tableNoResults)
 
+
+    }
+
+    checkErrorMessage(){
+        cy.wait(5000) // waiting for spinner to disapears
+
+        actionsPage.isIframeElementVisible(errorMessageDate)
 
     }
     

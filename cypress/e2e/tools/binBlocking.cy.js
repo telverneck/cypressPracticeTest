@@ -10,7 +10,7 @@ import addMerchantPage from '../../support/pages/manageMerchants/add'
 import binBlockingPage from '../../support/pages/tools/binBlocking' 
 
 
-describe("Tools Test Page", () => {
+describe("Tools Test Page - Bin Blocking", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -45,6 +45,25 @@ describe("Tools Test Page", () => {
         binBlockingPage.checkErrorMessage()
         binBlockingPage.clickCancel()
        
+        
+    });
+
+    it("Check Tools > Bin Blocking - No Results", () => {
+
+        binBlockingPage.clickAddRule()
+        binBlockingPage.searchForMerchant("No Results")
+        binBlockingPage.noMerchantText()
+       
+    });
+
+    it("Check Tools > Bin Blocking - Set Global Bin and Bin already existsy", () => {
+
+        binBlockingPage.clickAddRule()
+        binBlockingPage.setGlobalBin()
+        binBlockingPage.clickSave()
+        binBlockingPage.checkErrorMessage()
+
+
         
     });
 
