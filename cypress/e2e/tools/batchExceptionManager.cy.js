@@ -41,7 +41,7 @@ describe("Tools Test Page - Batch Exception Manager", () => {
     
     it("Check Tools > Batch Exception Manager - Check Move Button", () => {
 
-        batchExceptionManagerPage.clickMoveSelectedButton()
+        batchExceptionManagerPage.clickMoveSelectedButton() // Currently is displaying error screen
         // TODO: Add Next behavior here
 
 

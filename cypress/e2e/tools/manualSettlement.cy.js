@@ -49,10 +49,10 @@ describe("Tools Test Page - Manual Settlement", () => {
 
     });
 
-    it("Check Tools > Manual Settlement - invalid Search", () => {
+    it("Check Tools > Manual Settlement - No Results Search", () => {
 
         manualSettlementPage.clickRebindButton()
-        manualSettlementPage.searchByDate("2/1/2020", "2/1/2019")
+        manualSettlementPage.searchByDate("10/10/2023", "10/10/2023")
         manualSettlementPage.checkNoResults()
 
 

@@ -9,6 +9,7 @@ let targetUsernameInput = '#TargetUsername'
 let gridColumns = '.gridHeader' 
 let firstResultRow = '.gridHeader+ tr.gridRow' 
 
+let errorMessageDate = '#Message.errorText'
 
 
 
@@ -54,6 +55,12 @@ class auditTrailLogPage {
         actionsPage.isIframeElementVisible(firstResultRow)
 
 
+
+    }
+    checkErrorMessage(){
+        cy.wait(5000) // waiting for spinner to disapears
+
+        actionsPage.isIframeElementVisible(errorMessageDate)
 
     }
 

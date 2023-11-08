@@ -10,7 +10,7 @@ import addMerchantPage from '../../support/pages/manageMerchants/add'
 import cloneCustomFieldsPage from '../../support/pages/tools/cloneCustomFields' 
 
 
-describe("Tools Test Page", () => {
+describe("Tools Test Page - Clone Custom", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')

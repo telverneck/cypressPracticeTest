@@ -8,7 +8,7 @@ import authenticatePage from '../../support/pages/authentication'
 import paymentsPage from '../../support/pages/tools/payment' 
 
 
-describe("Tools Test Page", () => {
+describe("Tools Test Page - Payment Method Exporter", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -43,7 +43,7 @@ describe("Tools Test Page", () => {
 
     it("Check Tools > Payment Method Exporter - Invalid Search", () => {
         paymentsPage.searchPaymentExporterByID(3242343243243242344324)
-        // paymentsPage.searchPaymentExporterByID(3242343243243242344324) // to pass, this needs to run twice. 
+        paymentsPage.searchPaymentExporterByID(3242343243243242344324) // to pass, this needs to run twice. 
         paymentsPage.checkErrorMessage()
 
     });

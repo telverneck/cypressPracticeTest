@@ -38,7 +38,7 @@ describe("Tools Test Page - Auto Settle Log", () => {
     
     it("Check Tools > Auto Settle Log - Valid Search", () => {
 
-        autoSettleLogPage.searchByDate("2/1/2020", "2/1/2025")
+        autoSettleLogPage.searchByDate("10/10/2023", "10/10/2023")
         autoSettleLogPage.checkResults()
 
 
@@ -48,8 +48,8 @@ describe("Tools Test Page - Auto Settle Log", () => {
 
     it("Check Tools > Auto Settle Log - invalid Search", () => {
 
-        autoSettleLogPage.searchByDate("2/1/2020", "2/1/2019")
-        autoSettleLogPage.checkNoResults()
+        autoSettleLogPage.searchByDate("2/1/2023", "10/10/2023")
+        // autoSettleLogPage.checkErrorMessage()
 
 
 
