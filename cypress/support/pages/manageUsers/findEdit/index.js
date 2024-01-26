@@ -57,6 +57,7 @@ class findEdit {
     }
 
     clickLoginAsDefault(){
+        cy.wait(10000)
         actionsPage.clickIframeXpath(loginAsDefaultLink)
     }
 
