@@ -15,7 +15,7 @@ module.exports = defineConfig({
   },
   e2e: {
     
-    baseUrl:"http://admin.internal.uat.repayonline.com/",
+    baseUrl:"http://admin.uat.repayonline.com/",
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
     },

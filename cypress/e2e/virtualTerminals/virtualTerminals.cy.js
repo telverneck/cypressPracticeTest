@@ -5,10 +5,10 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
-import findEditPage from '../../support/pages/manageUsers/findEdit' 
+import findEditResellers from '../../support/pages/manageResellers/findEdit' 
 
 
-describe("Manage Users Test Page", () => {
+describe("Virtual Terminals Test Page", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -17,6 +17,7 @@ describe("Manage Users Test Page", () => {
             cy.setCookie(user.cookiesName,user.cookiesValue)
 
         })
+
         loginPage.goToLoginPage()
 
         
@@ -28,23 +29,25 @@ describe("Manage Users Test Page", () => {
         })
 
         homePage.checkHomePage()
-        const optionMenu = 'Manage Merchants'
-        const subMenuOption = 'Find/Edit'
-       
-    
+        const optionMenu = 'Manage Resellers'
+        const subMenuOption = 'Find/Edit' 
+        
+        
         homePage.goToOption(optionMenu, subMenuOption)
-        findEditPage.checkFindEditPage()
+        findEditResellers.checkFindEditResellersPage()
     })
+    
+    it("Check Virtual Terminals > Card", () => {
 
-    it("Check Manage Merchants > findEditPage - Search for User", () => {
+        findEditResellers.filterBy("EqualTo")
+        findEditResellers.searchByName("test")
+        findEditResellers.checkResultsTable()
 
-        // findEditPage.clickRefreshButton()
-        findEditPage.searchByName("E2E Tsys Test Merchant")
-        findEditPage.clickFirstItem()
-        findEditPage.clickLoginAsDefault()
 
 
     });
+
+    
 
     
 
