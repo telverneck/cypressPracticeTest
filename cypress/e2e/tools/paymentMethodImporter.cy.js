@@ -31,7 +31,7 @@ describe("Tools Test Page - Payment Method Importer", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Tools'
-        const subMenuOption = 'Payment Method Importer' 
+        const subMenuOption = 'Payment Method Importer (Beta)' 
         
         homePage.goToOption(optionMenu, subMenuOption)
 
@@ -40,7 +40,9 @@ describe("Tools Test Page - Payment Method Importer", () => {
     
     it("Check Tools > Payment Method Importer - Import file", () => {
 
-        //Need a proper file to import
+        paymentPage.checkPaymentMethodImporterPage()
+        paymentPage.selectAnyMerchant()
+        
     });
 
     

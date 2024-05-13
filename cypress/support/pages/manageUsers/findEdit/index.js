@@ -25,7 +25,7 @@ class findEdit {
 
     checkFindEditPage() {
 
-        cy.wait(8000) // waiting for spinner to disapears
+        cy.wait(20000) // waiting for spinner to disapears
 
         actionsPage.isIframeElementVisible(refreshButton)
         actionsPage.isIframeElementVisible(gridTable)

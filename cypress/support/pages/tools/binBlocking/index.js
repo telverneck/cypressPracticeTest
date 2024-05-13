@@ -1,7 +1,7 @@
 import actionsPage from '../../../actions'
 
 
-let addButton = "div[style='display: flex; margin-bottom: 1em;'] .ui.positive.button" 
+let addButton = ".column button[role='button'][class*='ui button repay-green'][style*='margin: 0px 0px 0.5em;']" 
 let rulesList = '.accordion ' 
 let cancelButton = '.actions button:nth-child(1)' 
 let SaveButton = '.actions button:nth-child(2)'  

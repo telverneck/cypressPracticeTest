@@ -51,7 +51,7 @@ class achInternalFileProcessing {
     }
 
     checkErrorMessage(){
-        cy.wait(5000) // waiting for spinner to disapears
+        cy.wait(15000) // waiting for spinner to disapears
 
         actionsPage.isIframeElementVisible(errorMessageDate)
 

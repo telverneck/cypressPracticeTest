@@ -36,12 +36,12 @@ describe("Tools Test Page - Payment Method Exporter", () => {
         paymentsPage.checkPaymentExporterPage()
     })
     
-    it.skip("Check Tools > Payment Method Exporter - Valid Search", () => {
+    it("Check Tools > Payment Method Exporter - Valid Search", () => {
         paymentsPage.searchPaymentExporterByID(1)
 
     });
 
-    it.skip("Check Tools > Payment Method Exporter - Invalid Search - numbers", () => {
+    it("Check Tools > Payment Method Exporter - Invalid Search - numbers", () => {
         paymentsPage.searchPaymentExporterByID(3242343243243242344324)
         paymentsPage.searchPaymentExporterByID(3242343243243242344324) // to pass, this needs to run twice. 
         paymentsPage.checkErrorMessage()

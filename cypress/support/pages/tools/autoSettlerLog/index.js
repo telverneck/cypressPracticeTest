@@ -45,7 +45,7 @@ class AutoSettlerLogPage {
     }
 
     checkResults(){
-        cy.wait(5000) // waiting for spinner to disapears
+        cy.wait(15000) // waiting for spinner to disapears
         actionsPage.isIframeElementVisible(gridColumns)
         // actionsPage.isIframeElementVisible(firstResultRow)
 
@@ -54,14 +54,14 @@ class AutoSettlerLogPage {
     }
 
     checkErrorMessage(){
-        cy.wait(5000) // waiting for spinner to disapears
+        cy.wait(15000) // waiting for spinner to disapears
 
         actionsPage.isIframeElementVisible(errorMessageDate)
 
     }
 
     checkNoResults(){
-        cy.wait(5000) // waiting for spinner to disapears
+        cy.wait(15000) // waiting for spinner to disapears
         actionsPage.isIframeElementVisible(gridColumns)
         // actionsPage.isIframeElementNotVisible(firstResultRow)
 

@@ -5,7 +5,7 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
-import twoFactorPage from '../../support/pages/preferences/twoFactor' 
+import securityPage from '../../support/pages/preferences/security' 
 
 
 describe("Preferences - Security", () => {
@@ -29,7 +29,7 @@ describe("Preferences - Security", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Preferences'
-        const subMenuOption = 'Two Factor'
+        const subMenuOption = 'Security'
        
     
         homePage.goToOption(optionMenu, subMenuOption)
@@ -37,7 +37,7 @@ describe("Preferences - Security", () => {
 
     it("Check Preferences > Security info", () => {
 
-        twoFactorPage.checkTwoFactorPage()
+        securityPage.checkSecurityPage()
 
 
     });
