@@ -32,7 +32,6 @@ class findEdit {
     
         actionsPage.isIframeElementVisible(userNameInput)
         actionsPage.isIframeElementVisible(firstNameInput)
-        // actionsPage.isIframeElementVisible(resellerDropdown)  //TODO Check why this element is not properly loaded when running the automation script
         actionsPage.isIframeElementVisible(statusDropdown)
         actionsPage.isIframeElementVisible(calendarButton)
         actionsPage.isIframeElementVisible(filterButton)
