@@ -51,9 +51,8 @@ describe("Manage Resellers Test Page", () => {
 
         findEditResellers.searchByName("test")
         findEditResellers.checkResultsTable()
-        // Due the fact of a know issue, these line bellow will not run
-        // findEditResellers.searchByID("1")
-        // findEditResellers.checkResultsTable()
+        findEditResellers.searchByID("1")
+        findEditResellers.checkResultsTable()
 
 
 
@@ -73,9 +72,13 @@ describe("Manage Resellers Test Page", () => {
         findEditResellers.checkNoResultsTable()
 
         
+    });
 
+    it("Check Manage Resellers > Check if Edit button is not visible", () => {
 
+        findEditResellers.checkEditButton()
 
+        
     });
 
     
