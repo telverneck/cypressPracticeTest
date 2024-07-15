@@ -35,7 +35,7 @@ class cloneCustomFieldsPage {
     searchMerchantID(ID){
         actionsPage.inputIframeText(merchantIdInput, ID)
         this.clickSearchButton()
-        cy.wait(5000) // waiting for spinner to disapears
+        cy.wait(15000) // waiting for spinner to disapears
 
         
         

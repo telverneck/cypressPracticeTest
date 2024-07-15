@@ -55,6 +55,10 @@ class ActionsPage {
         cy.xpath(xpathLocater).should('not.exist');
     };
 
+    isXpathElementVisible(xpathLocater) {
+        switchToIframe().xpath(xpathLocater).should('be.visible');
+    };
+
     pageTitleShouldBeEqual(title) {
         cy.title().should('eq', title)
     }

@@ -1,0 +1,86 @@
+/// <reference types="Cypress" />
+
+import actionsPage from '../../support/actions';
+import loginPage from '../../support/pages/login'
+import homePage from '../../support/pages/home' 
+import authenticatePage from '../../support/pages/authentication'
+
+import findEditPage from '../../support/pages/manageUsers/findEdit' 
+
+
+describe("Manage Users Test Page", () => {
+
+    beforeEach(function () {
+        cy.fixture("gatewayCredentials").as('user')
+
+        cy.get("@user").then((user) => {
+            cy.setCookie(user.cookiesName,user.cookiesValue)
+
+        })
+        loginPage.goToLoginPage()
+
+        
+        loginPage.checkLoginPage()
+
+        cy.get("@user").then((user) => {
+            loginPage.login(user.login, user.password)
+            // authenticatePage.authenticate(user.code)
+        })
+
+        homePage.checkHomePage()
+        const optionMenu = 'Manage Merchants'
+        const subMenuOption = 'Find/Edit'
+        const masterCard = '5425233430109903'
+       
+    
+        homePage.goToOption(optionMenu, subMenuOption)
+        findEditPage.checkFindEditPage()
+        findEditPage.searchByName("E2E Tsys Test Merchant")
+        findEditPage.clickFirstItem()
+        findEditPage.clickLoginAsDefault()
+    })
+
+    it("Switch To Merchants > Virtual Terminal - Sale", () => {
+
+        // findEditPage.clickRefreshButton()
+        findEditPage.goToSale()
+        findEditPage.makeTransactionWithCard(masterCard)
+        findEditPage.confirmTransaction()
+
+
+    });
+
+
+    it("Switch To Merchants > Virtual Terminal - PreAuth", () => {
+
+        // findEditPage.clickRefreshButton()
+        findEditPage.goToPreAuth()
+        findEditPage.makeTransactionWithCard(masterCard)
+        findEditPage.confirmTransaction()
+
+
+    });
+
+    it("Switch To Merchants > Virtual Terminal - Return", () => {
+
+        // findEditPage.clickRefreshButton()
+        findEditPage.goToReturn()
+        findEditPage.makeTransactionWithCard(masterCard)
+        findEditPage.confirmTransaction()
+
+
+    });
+
+    it("Switch To Merchants > Virtual Terminal - ForceAuth", () => {
+
+        findEditPage.goToForceAuth()
+        findEditPage.makeTransactionWithCard(masterCard)
+        findEditPage.confirmTransaction()
+
+
+    });
+
+    
+
+})
+

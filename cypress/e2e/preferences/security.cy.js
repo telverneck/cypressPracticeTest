@@ -5,12 +5,10 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
-import addMerchantPage from '../../support/pages/manageMerchants/add' 
-
-import paymentPage from '../../support/pages/tools/payment' 
+import securityPage from '../../support/pages/preferences/security' 
 
 
-describe("Tools Test Page - Payment Method Importer", () => {
+describe("Preferences - Security", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -30,19 +28,18 @@ describe("Tools Test Page - Payment Method Importer", () => {
         })
 
         homePage.checkHomePage()
-        const optionMenu = 'Tools'
-        const subMenuOption = 'Payment Method Importer (Beta)' 
-        
-        homePage.goToOption(optionMenu, subMenuOption)
-
-        paymentPage.checkPaymentMethodImporterPage()
-    })
+        const optionMenu = 'Preferences'
+        const subMenuOption = 'Security'
+       
     
-    it("Check Tools > Payment Method Importer - Import file", () => {
+        homePage.goToOption(optionMenu, subMenuOption)
+    })
 
-        paymentPage.checkPaymentMethodImporterPage()
-        paymentPage.selectAnyMerchant()
-        
+    it("Check Preferences > Security info", () => {
+
+        securityPage.checkSecurityPage()
+
+
     });
 
     

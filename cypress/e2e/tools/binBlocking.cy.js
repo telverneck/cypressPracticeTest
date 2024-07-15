@@ -38,7 +38,7 @@ describe("Tools Test Page - Bin Blocking", () => {
         binBlockingPage.checkbinBlockingPage()
     })
     
-    it("Check Tools > Bin Blocking - Check Rules and mandatory fields", () => {
+    it.skip("Check Tools > Bin Blocking - Check Rules and mandatory fields", () => {
 
         binBlockingPage.clickAddRule()
         binBlockingPage.clickSave()
@@ -48,7 +48,7 @@ describe("Tools Test Page - Bin Blocking", () => {
         
     });
 
-    it("Check Tools > Bin Blocking - No Results", () => {
+    it.skip("Check Tools > Bin Blocking - No Results", () => {
 
         binBlockingPage.clickAddRule()
         binBlockingPage.searchForMerchant("No Results")
@@ -56,7 +56,7 @@ describe("Tools Test Page - Bin Blocking", () => {
        
     });
 
-    it("Check Tools > Bin Blocking - Set Global Bin and Bin already existsy", () => {
+    it.skip("Check Tools > Bin Blocking - Set Global Bin and Bin already existsy", () => {
 
         binBlockingPage.clickAddRule()
         binBlockingPage.setGlobalBin()

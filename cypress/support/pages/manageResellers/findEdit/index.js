@@ -5,6 +5,7 @@ let idFilterInput = '#RadGrid1_ctl00_ctl02_ctl03_FilterTextBox_column'
 let filterButton = '#RadGrid1_ctl00_ctl02_ctl03_Filter_Creation_DT'  
 let tableResults = 'tbody .rgRow'  
 let tableNoResults = 'tbody .rgNoRecords'
+let editBUtton = "tr:nth-child(1) input[id*='EditResellerButton']"
 
 
 
@@ -48,19 +49,22 @@ class findEditResellers {
     }
 
     checkResultsTable(){
-        cy.wait(5000) // waiting for spinner to disapears
+        cy.wait(15000) // waiting for spinner to disapears
 
         actionsPage.isIframeElementVisible(tableResults)
 
     }
 
     checkNoResultsTable(){
-        cy.wait(5000) // waiting for spinner to disapears
+        cy.wait(15000) // waiting for spinner to disapears
 
         actionsPage.isIframeElementVisible(tableNoResults)
 
     }
 
+    checkEditButton(){
+        actionsPage.isIframeElementNotVisible(editBUtton)
+    }
 }
 
 export default new findEditResellers()

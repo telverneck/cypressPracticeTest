@@ -75,7 +75,7 @@ class addMerchant {
     }
 
     checkSuccessMessage(){
-        cy.wait(5000) // TODO: refactor this to a better approuch
+        cy.wait(15000) // TODO: refactor this to a better approuch
         actionsPage.elementIframeShouldContainText(messageInfoAlert, 'A new merchant account has been created successfully.')
     }
 

@@ -149,3 +149,9 @@ By Default, the project is already setup to run in parallel mode using Cypress-P
 
 `yarn cy:parallel` 
 
+# How to get your own cookie value
+
+
+Open DevTools and go to App > Cookies:
+
+copy RememberDevice and paste it in Fixture > Gateway Credentials.json

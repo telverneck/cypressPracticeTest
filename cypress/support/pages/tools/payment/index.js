@@ -6,9 +6,10 @@ let merchantIDtext =  "input[name='merchantId']"
 let fileTypeDropdown =  "div[name='fileType']" 
 let submitButton =  "button.ui.button" 
 let errorMessage =  ".ui.error.message" 
-let importButton =  ".flex-row" 
+let importButton =  ".flex-row , .ui.button.primary" 
 let selectMerchantDropdown =  ".selection.dropdown" 
-let merchantFirstItem =  ".selected.item" 
+let merchantFirstItem =  "div[role='listbox'] div[role='option']:nth-child(1)" 
+let merchantSecondItem =  "div[role='listbox'] div[role='option']:nth-child(2)" 
 
 
 
@@ -64,7 +65,7 @@ class paymentPage {
     }
 
     checkPaymentMethodImporterPage(){
-        actionsPage.isIframeElementVisible(importButton)
+        actionsPage.isIframeElementVisible(selectMerchantDropdown)
 
 
     }

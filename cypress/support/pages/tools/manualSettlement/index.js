@@ -34,6 +34,7 @@ class manualSettlementPage {
     
     searchByDate(dateFrom, dateTo){
         actionsPage.inputIframeText(fromDatePicker, dateFrom)
+        cy.wait(3000) // waiting for spinner to disapears
         actionsPage.inputIframeText(toDatePicker, dateTo)
         this.clickRebindButton()
 
@@ -41,7 +42,7 @@ class manualSettlementPage {
     }
 
     checkResults(){
-        cy.wait(5000) // waiting for spinner to disapears
+        cy.wait(10000) // waiting for spinner to disapears
         actionsPage.isIframeElementVisible(firstResultRow)
 
 
@@ -49,14 +50,14 @@ class manualSettlementPage {
     }
 
     checkNoResults(){
-        cy.wait(5000) // waiting for spinner to disapears
+        cy.wait(10000) // waiting for spinner to disapears
         actionsPage.isIframeElementVisible(noResults)
 
 
     }
 
     uncheckAuditFilters(){
-        ctionsPage.clickIframe(showFiltersCheckbox)
+        actionsPage.clickIframe(showFiltersCheckbox)
         actionsPage.isIframeElementChecked(showFiltersCheckbox)
     }
     

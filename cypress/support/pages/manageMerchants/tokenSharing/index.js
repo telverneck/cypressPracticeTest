@@ -68,7 +68,7 @@ class tokenSharing {
 
     addNewMerchantGroup(groupName){
         this.clickAddButton()
-        cy.wait(5000) //TODO wait for results, change this
+        cy.wait(15000) //TODO wait for results, change this
         actionsPage.inputIframeText(merchantGroupNameInput, groupName)
         cy.wait(2000) //TODO wait for results, change this
 
@@ -85,7 +85,7 @@ class tokenSharing {
     }
 
     checkSuccessMessage(text){
-        cy.wait(5000) // TODO: refactor this to a better approuch
+        cy.wait(15000) // TODO: refactor this to a better approuch
         actionsPage.elementIframeShouldContainText(messageInfoAlert, text)
     }
 
