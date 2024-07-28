@@ -11,14 +11,6 @@ let selectMerchantDropdown =  ".selection.dropdown"
 let merchantFirstItem =  "div[role='listbox'] div[role='option']:nth-child(1)" 
 let merchantSecondItem =  "div[role='listbox'] div[role='option']:nth-child(2)" 
 
-
-
-
-
-
-
-
-
 class paymentPage {
 
 
@@ -79,6 +71,11 @@ class paymentPage {
         actionsPage.clickIframe(selectMerchantDropdown)
         actionsPage.clickIframe(merchantFirstItem)
 
+
+    }
+
+    checkTableResults(){
+        actionsPage.isIframeElementVisible(selectMerchantDropdown)
 
     }
     
