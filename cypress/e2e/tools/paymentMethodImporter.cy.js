@@ -42,6 +42,7 @@ describe("Tools Test Page - Payment Method Importer", () => {
 
         paymentPage.checkPaymentMethodImporterPage()
         paymentPage.selectAnyMerchant()
+        paymentPage.checkTableResults()
         
     });
 
