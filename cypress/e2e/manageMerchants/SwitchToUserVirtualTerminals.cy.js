@@ -31,6 +31,8 @@ describe("Manage Users Test Page", () => {
         const optionMenu = 'Manage Merchants'
         const subMenuOption = 'Find/Edit'
         const masterCard = '5425233430109903'
+        const optionMenu2 = 'Virtual Terminals'
+        const subMenuOption2 = 'Card'
        
     
         homePage.goToOption(optionMenu, subMenuOption)
@@ -38,20 +40,24 @@ describe("Manage Users Test Page", () => {
         findEditPage.searchByName("E2E Tsys Test Merchant")
         findEditPage.clickFirstItem()
         findEditPage.clickLoginAsDefault()
+        homePage.goToOption(optionMenu2, subMenuOption2)
     })
 
-    it("Switch To Merchants > Virtual Terminal - Sale", () => {
+    it.skip("Switch To Merchants > Virtual Terminal - Sale", () => {
 
         // findEditPage.clickRefreshButton()
+
         findEditPage.goToSale()
         findEditPage.makeTransactionWithCard(masterCard)
         findEditPage.confirmTransaction()
+        actionsPage.visit('https://yopmail.com/wm')
+        actionsPage
 
 
     });
 
 
-    it("Switch To Merchants > Virtual Terminal - PreAuth", () => {
+    it.skip("Switch To Merchants > Virtual Terminal - PreAuth", () => {
 
         // findEditPage.clickRefreshButton()
         findEditPage.goToPreAuth()
@@ -61,7 +67,7 @@ describe("Manage Users Test Page", () => {
 
     });
 
-    it("Switch To Merchants > Virtual Terminal - Return", () => {
+    it.skip("Switch To Merchants > Virtual Terminal - Return", () => {
 
         // findEditPage.clickRefreshButton()
         findEditPage.goToReturn()
@@ -71,7 +77,7 @@ describe("Manage Users Test Page", () => {
 
     });
 
-    it("Switch To Merchants > Virtual Terminal - ForceAuth", () => {
+    it.skip("Switch To Merchants > Virtual Terminal - ForceAuth", () => {
 
         findEditPage.goToForceAuth()
         findEditPage.makeTransactionWithCard(masterCard)

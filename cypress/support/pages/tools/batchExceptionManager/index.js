@@ -12,7 +12,7 @@ class batchExceptionManagerPage {
 
     checkBatchExceptionManagerPage() {
 
-        cy.wait(60000) // waiting for spinner to disapears
+        cy.wait(90000) // waiting for spinner to disapears
         
 
         // actionsPage.isElementVisible(merchantSelect)

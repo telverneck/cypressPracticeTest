@@ -7,7 +7,7 @@ module.exports = defineConfig({
   reporterOptions: {
     reportDir: 'test-report',
     charts: true,
-    reportPageTitle: 'custom-title',
+    reportPageTitle: 'Repay GUI Automation Report',
     embeddedScreenshots: true,
     inlineAssets: true,
     saveAllAttempts: false,
