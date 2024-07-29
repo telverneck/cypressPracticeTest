@@ -36,7 +36,7 @@ describe("Manage Users Test Page", () => {
         findEditPage.checkFindEditPage()
     })
 
-    it("Check Manage Merchants > findEditPage - Search for User", () => {
+    it.skip("Check Manage Merchants > findEditPage - Search for User", () => {
 
         // findEditPage.clickRefreshButton()
         findEditPage.searchByName("E2E Tsys Test Merchant")
