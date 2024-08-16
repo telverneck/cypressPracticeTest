@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress open",
+    "testNode": "node cypress/scripts/cypress-run.ts",
     "cy:run": "npx cypress run --headed",
     "cy:regression": "npx cypress run",
-    "cy:parallel": "cypress-parallel -d cypress/e2e/manageMerchants -t 2 -s run"
+    "cy:parallel": "cypress-parallel -d cypress/e2e/ -t 4 -s cy:regression -n .../../../node_modules/cypress-mochawesome-reporter"
   },
   "keywords": [
     "cypress",

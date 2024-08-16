@@ -18,11 +18,13 @@ import './commands'
 
 import 'cypress-mochawesome-reporter/register';
 import '@faker-js/faker';
+import 'cypress-plugin-api'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
     // failing the test
+    // TODO: check logError or only ignore ReferenceError
     return false
   })
