@@ -1400,11 +1400,6 @@
   "resolved" "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz"
   "version" "3.0.0"
 
-"npm-check-updates@^17.1.0":
-  "integrity" "sha512-RcohCA/tdpxyPllBlYDkqGXFJQgTuEt0f2oPSL9s05pZ3hxYdleaUtvEcSxKl0XAg3ncBhVgLAxhXSjoryUU5Q=="
-  "resolved" "https://registry.npmjs.org/npm-check-updates/-/npm-check-updates-17.1.0.tgz"
-  "version" "17.1.0"
-
 "npm-run-path@^4.0.0":
   "integrity" "sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw=="
   "resolved" "https://registry.npmjs.org/npm-run-path/-/npm-run-path-4.0.1.tgz"
