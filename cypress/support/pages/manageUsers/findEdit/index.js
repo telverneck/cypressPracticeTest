@@ -12,16 +12,26 @@ let calendarButton = ".rcCalPopup"
 let filterButton = ".rgFilter" 
 let firstItem = "tbody tr.rgRow a#grid_find_user2_ctl00_ctl04_UserLink , tbody tr.rgRow #RadGrid1_ctl00_ctl04_gbcViewMerchantButton" 
 
-let loginAsDefaultLink = "//span[contains(text(),'Login as Default')]"
+let loginAsDefaultLink = "//span[contains(text(),'Login as Default')]" 
+let editMerchantButton = "//span[contains(text(),'Edit Merchant')]" 
+let addUserButton = "//span[contains(text(),'Add User')]" 
+let viewUsersButton = "//span[contains(text(),'View Users')]" 
+let deleteMerchantButton = "//span[contains(text(),'Delete')]" 
+let deactivateButton = "//span[contains(text(),'Deactivate')]" 
 
+let merchantInfo = "table.tableInner tr:nth-child(2) td:nth-child(2) p"
+let merchantInfo2 = "table.tableInner tr:nth-child(2) td:nth-child(3) p" 
+let merchantInfoHeader = ".tableHeader" 
+
+let merchantInfoTab = "ul.rtsUL li:first-child" 
+let validationsTab = "ul.rtsUL li:nth-child(2)" 
+let processorsTab = "ul.rtsUL li:nth-child(3)" 
 
 
 
 
 
 class findEdit {
-
-
 
     checkFindEditPage() {
 
@@ -43,7 +53,6 @@ class findEdit {
         actionsPage.inputIframeText(userNameInput, text)
         actionsPage.submitIframe(userNameInput)
         cy.wait(10000)
-        actionsPage.clickIframe(firstItem)
     }
 
     clickFirstItem(){
@@ -60,8 +69,27 @@ class findEdit {
         actionsPage.clickIframeXpath(loginAsDefaultLink)
     }
 
+    clickViewUsers(){
+        actionsPage.clickIframeXpath(viewUsersButton)
+    }
 
-    
+
+    checkMerchantDetail(){
+        cy.wait(10000)
+        actionsPage.clickIframe(merchantInfoTab)
+        actionsPage.elementIframeShouldContainText(merchantInfoHeader, "Merchant Info")
+        actionsPage.isIframeElementVisible(validationsTab)
+        actionsPage.isIframeElementVisible(processorsTab) 
+        actionsPage.isIframeElementVisible(merchantInfo) 
+        actionsPage.isIframeElementVisible(merchantInfo2) 
+        actionsPage.isIframeElementVisible(merchantInfoHeader) 
+        actionsPage.isXpathElementVisible(loginAsDefaultLink)
+        actionsPage.isXpathElementVisible(addUserButton)
+        actionsPage.isXpathElementVisible(viewUsersButton)
+        actionsPage.isXpathElementVisible(deactivateButton)
+        actionsPage.isXpathElementVisible(deleteMerchantButton)
+
+    }
     
 
 }

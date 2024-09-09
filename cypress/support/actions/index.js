@@ -41,6 +41,12 @@ class ActionsPage {
         switchToIframe().find(webElement).should('be.visible')
     }
 
+    isIframeElementsVisible(webElement) {
+        switchToIframe().find(webElement).each(($el) => {
+            cy.wrap($el).should('be.visible');
+          });
+    }
+
     isIframeElementChecked(webElement) {
         switchToIframe().find(webElement).should('be.visible').and('not.be.checked');
     }

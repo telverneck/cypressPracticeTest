@@ -36,12 +36,15 @@ describe("Manage Users Test Page", () => {
         findEditPage.checkFindEditPage()
     })
 
-    it.skip("Check Manage Merchants > findEditPage - Search for User", () => {
+    it("Check Manage Merchants > findEditPage - Validate Merchant Info tab", () => {
 
         // findEditPage.clickRefreshButton()
         findEditPage.searchByName("E2E Tsys Test Merchant")
-        findEditPage.clickFirstItem()
-        findEditPage.clickLoginAsDefault()
+        findEditPage.clickFirstItem() 
+        findEditPage.checkMerchantDetail()
+        findEditPage.clickViewUsers()
+
+        // findEditPage.clickLoginAsDefault() 
 
 
     });
