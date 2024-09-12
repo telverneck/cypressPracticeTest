@@ -56,6 +56,8 @@ class findEdit {
     }
 
     clickFirstItem(){
+        cy.wait(3000)
+
         actionsPage.clickIframe(firstItem)
         
     }
