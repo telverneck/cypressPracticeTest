@@ -10,7 +10,7 @@ let resellerDropdown = "input[id*='Reseller_Input']"
 let statusDropdown = "input[id*='StatusFilter_Input']" 
 let calendarButton = ".rcCalPopup" 
 let filterButton = ".rgFilter" 
-let firstItem = "tbody tr.rgRow a#grid_find_user2_ctl00_ctl04_UserLink , tbody tr.rgRow #RadGrid1_ctl00_ctl04_gbcViewMerchantButton" 
+let firstMerchantItem = "tr.rgRow:nth-child(1) td:nth-child(2) input" 
 
 let loginAsDefaultLink = "//span[contains(text(),'Login as Default')]" 
 let editMerchantButton = "//span[contains(text(),'Edit Merchant')]" 
@@ -27,6 +27,10 @@ let merchantInfoTab = "ul.rtsUL li:first-child"
 let validationsTab = "ul.rtsUL li:nth-child(2)" 
 let processorsTab = "ul.rtsUL li:nth-child(3)" 
 
+let additionalInfoValidation = "#AdditionalInfo"
+
+let savedProcessorsTable= "#gridProfilesPanel"
+let activeProcessorsTable= "#gridActiveProcessorPanel"
 
 
 
@@ -55,10 +59,10 @@ class findEdit {
         cy.wait(10000)
     }
 
-    clickFirstItem(){
+    clickfirstMerchantItem(){
         cy.wait(3000)
 
-        actionsPage.clickIframe(firstItem)
+        actionsPage.clickIframe(firstMerchantItem)
         
     }
 
@@ -73,6 +77,18 @@ class findEdit {
 
     clickViewUsers(){
         actionsPage.clickIframeXpath(viewUsersButton)
+    }
+
+    clickValidationTab(){
+        cy.wait(5000)
+
+        actionsPage.clickIframe(validationsTab)
+    }
+
+    clickProcessorsTab(){
+        cy.wait(5000)
+
+        actionsPage.clickIframe(processorsTab)
     }
 
 
@@ -90,6 +106,19 @@ class findEdit {
         actionsPage.isXpathElementVisible(viewUsersButton)
         actionsPage.isXpathElementVisible(deactivateButton)
         actionsPage.isXpathElementVisible(deleteMerchantButton)
+
+    }
+
+    checkValidationTab(){
+        actionsPage.elementIframeShouldContainText(merchantInfoHeader, "Validation")
+        actionsPage.isIframeElementVisible(additionalInfoValidation)
+
+    }
+
+    checkProcessorsTab(){
+        actionsPage.elementIframeShouldContainText(merchantInfoHeader, "Processors")
+        actionsPage.isIframeElementVisible(savedProcessorsTable)
+        actionsPage.isIframeElementVisible(activeProcessorsTable)
 
     }
     

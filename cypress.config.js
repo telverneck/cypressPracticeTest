@@ -2,9 +2,12 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
+  // reporter: 'junit',
   video: false,
   retries: 0,
   reporterOptions: {
+    // mochFile: "results/my-test-output.xml",
+    // toConsole: true,
     reportDir: 'test-report',
     charts: true,
     reportPageTitle: 'Repay GUI Automation Report',

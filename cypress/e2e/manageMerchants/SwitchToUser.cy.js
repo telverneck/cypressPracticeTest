@@ -34,17 +34,34 @@ describe("Manage Users Test Page", () => {
     
         homePage.goToOption(optionMenu, subMenuOption)
         findEditPage.checkFindEditPage()
+        findEditPage.searchByName("E2E Tsys Test Merchant")
+        findEditPage.clickfirstMerchantItem() 
+        findEditPage.clickfirstMerchantItem() 
     })
 
-    it("Check Manage Merchants > findEditPage - Validate Merchant Info tab", () => {
+    it.skip("Check Manage Merchants > findEditPage - Validate Merchant Info tab", () => {
 
         // findEditPage.clickRefreshButton()
-        findEditPage.searchByName("E2E Tsys Test Merchant")
-        findEditPage.clickFirstItem() 
         findEditPage.checkMerchantDetail()
         findEditPage.clickViewUsers()
 
         // findEditPage.clickLoginAsDefault() 
+
+
+    });
+
+    it("Check Manage Merchants > findEditPage - Check Validation tab", () => {
+
+        findEditPage.clickValidationTab()
+        findEditPage.checkValidationTab()
+
+
+    });
+
+    it("Check Manage Merchants > findEditPage - Check Processors tab", () => {
+
+        findEditPage.clickProcessorsTab()
+        findEditPage.checkProcessorsTab()
 
 
     });

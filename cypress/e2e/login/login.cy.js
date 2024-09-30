@@ -19,7 +19,25 @@ describe("Login Test", () => {
     })
     
     it("Login Page -  Standard and full admin", () => {
+        cy.fixture("gatewayCredentials").as('user')
+
+        cy.get("@user").then((user) => {
+            cy.setCookie(user.cookiesName,user.cookiesValue)
+
+        })
+
+        cy.get("@user").then((user) => {
+            loginPage.login(user.login, user.password)
+            // authenticatePage.authenticate(user.code)
+        })
         
+        homePage.checkHomePage()
+        // homePage.logout()
+        // loginPage.checkLoginPage()
+
+    });
+
+    it("Login Page -  Standard and full admin2", () => {
         cy.fixture("gatewayCredentials").as('user')
 
         cy.get("@user").then((user) => {
