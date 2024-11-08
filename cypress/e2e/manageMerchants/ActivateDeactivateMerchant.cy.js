@@ -5,11 +5,10 @@ import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
 
-import addMerchantPage from '../../support/pages/manageMerchants/add' 
-import findMerchantPage from '../../support/pages/manageMerchants/find' 
+import findEditPage from '../../support/pages/manageUsers/findEdit' 
 
 
-describe("Manage Merchants Test Page - Add", () => {
+describe("Manage Users Test Page", () => {
 
     beforeEach(function () {
         cy.fixture("gatewayCredentials").as('user')
@@ -30,44 +29,28 @@ describe("Manage Merchants Test Page - Add", () => {
 
         homePage.checkHomePage()
         const optionMenu = 'Manage Merchants'
-        const subMenuOption = 'Add'
+        const subMenuOption = 'Find/Edit'
        
     
         homePage.goToOption(optionMenu, subMenuOption)
-        addMerchantPage.chooseAnyMerchant()
-        addMerchantPage.checkAddMerchantPage()
-
+        findEditPage.checkFindEditPage()
+        findEditPage.searchByName("Activate User Test")
+        findEditPage.clickfirstMerchantItem() 
+        findEditPage.clickfirstMerchantItem() 
     })
 
-    it.skip("Check Manage Merchants > Add - Add Merchant", () => {
-
-        addMerchantPage.createNewMerchant()
-
-
+    
+    it("Check Manage Merchants > findEditPage - Deactivate Merchant", () => {
+        // findEditPage.clickfirstMerchantItem()  //Sometimes Repay takes too long to respond, it fixes by clicking twice
+        findEditPage.clickDeactivateMerchantButton()
+        findEditPage.checkDeactivatedMerchant()
+        findEditPage.clickActivateMerchantButton()
+        findEditPage.checkActivatedMerchant()
+        
     });
-
-    it("Check Manage Merchants > Add - Check invalid Email", () => {
-
-        addMerchantPage.checkInvalidEmailError()
-
-
-    });
-
-    it("Check Manage Merchants > Add - Check required fields", () => {
-
-        addMerchantPage.requiredFieldError()
-
-
-    });
-
     
 
-    
-
-  
-
-    
-
+ 
 
 })
 

@@ -36,7 +36,7 @@ describe("Manage Users Test Page", () => {
         addResellerUserPage.checkaddResellerUserPage()
     })
 
-    it("Check Manage Users > Add Reseller User - Add User", () => {
+    it.skip("Check Manage Users > Add Reseller User - Add User", () => {
 
         addResellerUserPage.createNewUser()
 

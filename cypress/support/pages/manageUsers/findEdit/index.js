@@ -18,6 +18,7 @@ let addUserButton = "//span[contains(text(),'Add User')]"
 let viewUsersButton = "//span[contains(text(),'View Users')]" 
 let deleteMerchantButton = "//span[contains(text(),'Delete')]" 
 let deactivateButton = "//span[contains(text(),'Deactivate')]" 
+let activateButton = "//span[contains(text(),'Activate')]" 
 
 let merchantInfo = "table.tableInner tr:nth-child(2) td:nth-child(2) p"
 let merchantInfo2 = "table.tableInner tr:nth-child(2) td:nth-child(3) p" 
@@ -32,8 +33,10 @@ let additionalInfoValidation = "#AdditionalInfo"
 let savedProcessorsTable= "#gridProfilesPanel"
 let activeProcessorsTable= "#gridActiveProcessorPanel"
 
-
-
+let confirmPopupButton = "div[style*='visible'] .rwDialog.rwConfirmDialog .rwDialogButtons .rwOkBtn"
+let deleteProcessorButton= "//tr[1]//td[text()='Paysafe ACH']//..//button[@aria-label='DeleteProcessor']"
+let addProfileButton= "#lbAddProfile"
+let okPopButton = ".RadWindow_Default .rwDialogButtons .rwOkBtn"
 
 class findEdit {
 
@@ -60,7 +63,7 @@ class findEdit {
     }
 
     clickfirstMerchantItem(){
-        cy.wait(3000)
+        cy.wait(4000)
 
         actionsPage.clickIframe(firstMerchantItem)
         
@@ -72,10 +75,10 @@ class findEdit {
 
     clickLoginAsDefault(){
         cy.wait(10000)
-        actionsPage.clickIframeXpath(loginAsDefaultLink)
+        this.clickButtonWithText("Login as Default")
     }
 
-    clickViewUsers(){
+    clickViewUsers(){ 
         actionsPage.clickIframeXpath(viewUsersButton)
     }
 
@@ -121,8 +124,47 @@ class findEdit {
         actionsPage.isIframeElementVisible(activeProcessorsTable)
 
     }
-    
+    clickDeactivateMerchantButton(){
+        this.clickButtonWithText("Deactivate")
+        actionsPage.clickIframe(confirmPopupButton)
+    }
 
+    checkDeactivatedMerchant(){
+        cy.wait(4000)
+
+        actionsPage.isXpathElementVisible(activateButton)
+    }
+
+    checkActivatedMerchant(){
+        cy.wait(4000)
+
+        actionsPage.isXpathElementVisible(deactivateButton)
+        
+    }
+
+    clickActivateMerchantButton(){
+        this.clickButtonWithText("Activate")
+        actionsPage.clickIframe(confirmPopupButton)
+
+    }
+
+    clickButtonWithText(buttonText){
+        cy.wait(7000) //span[text()='Activate']
+
+        let button = `//li[@class='rtbLI rtbItem']//span[text()='${buttonText}']`
+        actionsPage.clickIframeXpath(button)
+    }
+
+    deleteProcessor(){
+        actionsPage.clickIframeXpath(deleteProcessorButton)
+        cy.wait(3000) 
+
+        actionsPage.clickIframe(okPopButton)
+    }
+
+    addProfile(){
+        actionsPage.clickIframe(addProfileButton)
+    }
 }
 
 export default new findEdit()

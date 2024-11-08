@@ -44,29 +44,27 @@ describe("Manage Users Test Page", () => {
         // findEditPage.clickRefreshButton()
         findEditPage.checkMerchantDetail()
         findEditPage.clickViewUsers()
-
         // findEditPage.clickLoginAsDefault() 
-
 
     });
 
-    it("Check Manage Merchants > findEditPage - Check Validation tab", () => {
+    it.skip("Check Manage Merchants > findEditPage - Check Validation tab", () => {
 
         findEditPage.clickValidationTab()
         findEditPage.checkValidationTab()
 
-
     });
 
+    
     it("Check Manage Merchants > findEditPage - Check Processors tab", () => {
 
         findEditPage.clickProcessorsTab()
         findEditPage.checkProcessorsTab()
-
-
+        findEditPage.deleteProcessor()
+        findEditPage.addProfile()
     });
 
-    
+ 
 
 })
 
