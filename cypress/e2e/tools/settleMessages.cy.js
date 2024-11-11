@@ -12,7 +12,7 @@ import settleMessagesPage from '../../support/pages/tools/settleMessages'
 describe("Tools Test Page - Settle Messages", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)

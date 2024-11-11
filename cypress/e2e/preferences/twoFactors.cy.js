@@ -11,7 +11,7 @@ import twoFactorPage from '../../support/pages/preferences/twoFactor'
 describe("Manage Merchants Test Page - Add", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)

@@ -14,7 +14,7 @@ import aCHInternalFileProcessingPage from '../../support/pages/reporting/ACHInte
 describe("Reporting Test Page - ACH Internal File Processing", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)

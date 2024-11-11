@@ -13,7 +13,7 @@ import tokenSharingPage from '../../support/pages/manageMerchants/tokenSharing'
 describe("Manage Merchants Test Page - Token Sharing", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)

@@ -11,7 +11,7 @@ import findEditPage from '../../support/pages/manageUsers/findEdit'
 describe("Manage Users Test Page", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)
@@ -39,7 +39,7 @@ describe("Manage Users Test Page", () => {
         findEditPage.clickfirstMerchantItem() 
     })
 
-    it.skip("Check Manage Merchants > findEditPage - Validate Merchant Info tab", () => {
+    it("Check Manage Merchants > findEditPage - Validate Merchant Info tab", () => {
 
         // findEditPage.clickRefreshButton()
         findEditPage.checkMerchantDetail()
@@ -48,7 +48,7 @@ describe("Manage Users Test Page", () => {
 
     });
 
-    it.skip("Check Manage Merchants > findEditPage - Check Validation tab", () => {
+    it("Check Manage Merchants > findEditPage - Check Validation tab", () => {
 
         findEditPage.clickValidationTab()
         findEditPage.checkValidationTab()

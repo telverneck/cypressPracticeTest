@@ -11,7 +11,7 @@ import systemInfoPage from '../../support/pages/tools/systemInfo'
 describe("Tools Test Page - System Info", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)

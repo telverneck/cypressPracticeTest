@@ -13,7 +13,7 @@ import manualSettlementPage from '../../support/pages/tools/manualSettlement'
 describe("Tools Test Page - Manual Settlement", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)

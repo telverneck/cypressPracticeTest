@@ -36,7 +36,10 @@ let activeProcessorsTable= "#gridActiveProcessorPanel"
 let confirmPopupButton = "div[style*='visible'] .rwDialog.rwConfirmDialog .rwDialogButtons .rwOkBtn"
 let deleteProcessorButton= "//tr[1]//td[text()='Paysafe ACH']//..//button[@aria-label='DeleteProcessor']"
 let addProfileButton= "#lbAddProfile"
-let okPopButton = ".RadWindow_Default .rwDialogButtons .rwOkBtn"
+let okPopButton = ".RadWindow_Default .rwDialogButtons .rwOkBtn" 
+
+let updateMerchantButton = "#UpdateButton" 
+
 
 class findEdit {
 
@@ -127,6 +130,19 @@ class findEdit {
     clickDeactivateMerchantButton(){
         this.clickButtonWithText("Deactivate")
         actionsPage.clickIframe(confirmPopupButton)
+    }
+
+    clickEditMerchantButton(){
+        cy.wait(7000)
+        this.clickButtonWithText("Edit Merchant")
+        cy.wait(7000)
+        actionsPage.isIframeElementVisible(updateMerchantButton)
+
+    }
+
+    clickUpdateMerchant(){
+        actionsPage.clickIframe(updateMerchantButton)
+
     }
 
     checkDeactivatedMerchant(){

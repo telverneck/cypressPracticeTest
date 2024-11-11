@@ -12,7 +12,7 @@ import achAuthFormsPage from '../../support/pages/tools/achAuthForms'
 describe("Tools Test Page - Ach Auth Form", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)

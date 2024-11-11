@@ -13,7 +13,7 @@ import paymentPage from '../../support/pages/tools/payment'
 describe("Tools Test Page - Payment Enviroment", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)

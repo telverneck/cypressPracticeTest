@@ -11,7 +11,7 @@ import autoSettleLogPage from '../../support/pages/tools/autoSettlerLog'
 describe("Tools Test Page - Auto Settle Log", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)

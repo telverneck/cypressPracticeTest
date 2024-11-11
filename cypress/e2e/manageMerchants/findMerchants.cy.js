@@ -12,7 +12,7 @@ import findMerchantPage from '../../support/pages/manageMerchants/find'
 describe("Manage Merchants Test Page - Find", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)

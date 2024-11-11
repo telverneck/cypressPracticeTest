@@ -13,7 +13,7 @@ import batchExceptionManagerPage from '../../support/pages/tools/batchExceptionM
 describe("Tools Test Page - Batch Exception Manager", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)

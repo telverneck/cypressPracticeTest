@@ -13,7 +13,7 @@ import processorSetupPage from '../../support/pages/tools/processorSetup'
 describe("Tools Test Page - Processor Setup", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)

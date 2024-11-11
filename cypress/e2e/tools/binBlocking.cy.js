@@ -13,7 +13,7 @@ import binBlockingPage from '../../support/pages/tools/binBlocking'
 describe("Tools Test Page - Bin Blocking", () => {
 
     beforeEach(function () {
-        cy.fixture("gatewayCredentials").as('user')
+        cy.fixture("enviromentSettings").as('user')
 
         cy.get("@user").then((user) => {
             cy.setCookie(user.cookiesName,user.cookiesValue)
