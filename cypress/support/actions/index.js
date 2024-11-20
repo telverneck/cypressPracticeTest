@@ -41,6 +41,11 @@ class ActionsPage {
         switchToIframe().find(webElement).should('be.visible')
     }
 
+    checkForNumberOfElements(webElements, number){
+        switchToIframe().find(webElements).should('have.length', number)
+
+    }
+
     isIframeElementsVisible(webElement) {
         switchToIframe().find(webElement).each(($el) => {
             cy.wrap($el).should('be.visible');

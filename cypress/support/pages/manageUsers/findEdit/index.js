@@ -39,7 +39,8 @@ let addProfileButton= "#lbAddProfile"
 let okPopButton = ".RadWindow_Default .rwDialogButtons .rwOkBtn" 
 
 let updateMerchantButton = "#UpdateButton" 
-
+let viewUsersTable = ".rgMasterTable"
+let columnsItems = ".rgHeader"
 
 class findEdit {
 
@@ -66,7 +67,7 @@ class findEdit {
     }
 
     clickfirstMerchantItem(){
-        cy.wait(4000)
+        cy.wait(7000)
 
         actionsPage.clickIframe(firstMerchantItem)
         
@@ -83,6 +84,13 @@ class findEdit {
 
     clickViewUsers(){ 
         actionsPage.clickIframeXpath(viewUsersButton)
+    }
+
+    checkViewUsersPage(){
+        cy.wait(10000)
+        actionsPage.isIframeElementVisible(viewUsersTable)
+        actionsPage.checkForNumberOfElements(columnsItems, 8)
+        
     }
 
     clickValidationTab(){

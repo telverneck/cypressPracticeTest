@@ -44,6 +44,7 @@ describe("Manage Users Test Page", () => {
         // findEditPage.clickRefreshButton()
         findEditPage.checkMerchantDetail()
         findEditPage.clickViewUsers()
+        findEditPage.checkViewUsersPage()
         // findEditPage.clickLoginAsDefault() 
 
     });
