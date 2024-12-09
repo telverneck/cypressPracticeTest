@@ -8,7 +8,7 @@ import authenticatePage from '../../support/pages/authentication'
 import addResellerUserPage from '../../support/pages/manageUsers/addResellerUser' 
 
 
-describe("Manage Users Test Page", () => {
+describe.skip("Manage Users Test Page", () => {
 
     beforeEach(function () {
         cy.fixture("enviromentSettings").as('user')
@@ -43,7 +43,8 @@ describe("Manage Users Test Page", () => {
 
     });
 
-    it("Check Manage Users > Add Reseller User - Check Mandatory Fields", () => {
+    // Blocked due MFA
+    it.skip("Check Manage Users > Add Reseller User - Check Mandatory Fields", () => {
 
         addResellerUserPage.clickSaveButton()
         addResellerUserPage.requiredFieldError()
@@ -52,7 +53,8 @@ describe("Manage Users Test Page", () => {
 
     });
 
-    it("Check Manage Users > Add Reseller User - Check email validation", () => {
+    // Blocked due MFA
+    it.skip("Check Manage Users > Add Reseller User - Check email validation", () => {
 
         addResellerUserPage.checkInvalidEmailError()
 

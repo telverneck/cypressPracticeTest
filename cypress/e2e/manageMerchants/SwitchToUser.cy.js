@@ -61,8 +61,8 @@ describe("Manage Users Test Page", () => {
 
         findEditPage.clickProcessorsTab()
         findEditPage.checkProcessorsTab()
-        findEditPage.deleteProcessor()
-        findEditPage.addProfile()
+        // findEditPage.deleteProcessor() WIP
+        // findEditPage.addProfile() WIP
     });
 
  

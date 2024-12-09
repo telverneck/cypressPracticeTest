@@ -2,7 +2,7 @@ import actionsPage from '../../../actions'
 
 
 let header = '.pageHeader' 
-let validatePasswordButton = '#Login' 
+let refreshButton = '#Refresh' 
 let passwordText = '#LoginPassword' 
 let errorMessage = '.errorText' 
 
@@ -17,15 +17,14 @@ class systemInfoPage {
         cy.wait(1000) // waiting for spinner to disapears
         
         actionsPage.isIframeElementVisible(header)
-        actionsPage.isIframeElementVisible(validatePasswordButton)
-        actionsPage.isIframeElementVisible(passwordText)
+        actionsPage.isIframeElementVisible(refreshButton)
 
 
         
     }
 
-    clickValidatePasswordButton(){
-        actionsPage.clickIframe(validatePasswordButton)
+    clickRefreshButton(){
+        actionsPage.clickIframe(refreshButton)
     }
 
     checkErrorMessage(){

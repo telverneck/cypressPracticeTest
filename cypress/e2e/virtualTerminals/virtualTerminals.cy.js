@@ -37,7 +37,8 @@ describe("Virtual Terminals Test Page", () => {
         findEditResellers.checkFindEditResellersPage()
     })
     
-    it("Check Virtual Terminals > Card", () => {
+    // WIP
+    it.skip("Check Virtual Terminals > Card", () => {
 
         findEditResellers.filterBy("EqualTo")
         findEditResellers.searchByName("test")

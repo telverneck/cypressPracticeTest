@@ -38,8 +38,8 @@ describe("Tools Test Page - System Info", () => {
     
     it("Check Tools > System Info - Valid System Info Page", () => {
 
-        systemInfoPage.clickValidatePasswordButton()
-        systemInfoPage.checkErrorMessage()
+        systemInfoPage.clickRefreshButton()
+        systemInfoPage.checsystemInfoPage()
 
 
     });

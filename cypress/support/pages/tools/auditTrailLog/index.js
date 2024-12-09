@@ -50,7 +50,7 @@ class auditTrailLogPage {
     }
 
     checkResults(){
-        cy.wait(15000) // waiting for spinner to disapears
+        cy.wait(20000) // waiting for spinner to disapears
         actionsPage.isIframeElementVisible(gridColumns)
         actionsPage.isIframeElementVisible(firstResultRow)
 

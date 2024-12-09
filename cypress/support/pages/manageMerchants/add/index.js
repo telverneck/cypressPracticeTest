@@ -89,6 +89,7 @@ class addMerchant {
     checkInvalidEmailError(){
         actionsPage.inputIframeText(emailInput, "TestWrongEmail")
         this.clickSaveButton()
+        cy.wait(15000) // TODO: refactor this to a better approuch
         actionsPage.isIframeElementVisible(emailRequiredFieldError)
 
 
