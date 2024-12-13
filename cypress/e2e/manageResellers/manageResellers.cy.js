@@ -37,6 +37,7 @@ describe("Manage Resellers Test Page", () => {
         findEditResellers.checkFindEditResellersPage()
     })
     
+    // Those Scripts are skipped due https://repayonline.atlassian.net/issues/RG-19992, waiting for fix
     it.skip("Check Manage Resellers > Find - valid search", () => {
 
         findEditResellers.filterBy("EqualTo")

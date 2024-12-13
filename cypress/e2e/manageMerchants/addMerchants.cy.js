@@ -34,7 +34,6 @@ describe("Manage Merchants Test Page - Add", () => {
        
     
         homePage.goToOption(optionMenu, subMenuOption)
-        // addMerchantPage.chooseAnyMerchant()
         addMerchantPage.checkAddMerchantPage()
 
     })

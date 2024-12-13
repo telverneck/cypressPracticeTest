@@ -45,7 +45,6 @@ describe("Manage Users Test Page", () => {
         findEditPage.checkMerchantDetail()
         findEditPage.clickViewUsers()
         findEditPage.checkViewUsersPage()
-        // findEditPage.clickLoginAsDefault() 
 
     });
 
@@ -61,8 +60,6 @@ describe("Manage Users Test Page", () => {
 
         findEditPage.clickProcessorsTab()
         findEditPage.checkProcessorsTab()
-        // findEditPage.deleteProcessor() WIP
-        // findEditPage.addProfile() WIP
     });
 
  

@@ -64,6 +64,43 @@ class achInternalFileProcessing {
         actionsPage.clickIframe(submitButton)
     }
 
+    getCurrentDate() {
+        const currentDate = new Date();
+        const month = currentDate.getMonth() + 1; 
+        const day = currentDate.getDate();
+        const year = currentDate.getFullYear();
+      
+        // Formata a data no formato MM/DD/YYYY
+        const formattedDate = `${month.toString().padStart(2, '0')}/${day.toString().padStart(2, '0')}/${year}`;
+        return formattedDate;
+      }
+
+    getDateThreeMonthsAgo() {
+        const currentDate = new Date();
+        currentDate.setMonth(currentDate.getMonth() - 3); 
+      
+        const month = currentDate.getMonth() + 1;
+        const day = currentDate.getDate();
+        const year = currentDate.getFullYear();
+      
+        // Formata a data no formato MM/DD/YYYY
+        const formattedDate = `${month.toString().padStart(2, '0')}/${day.toString().padStart(2, '0')}/${year}`;
+        return formattedDate;
+      }
+
+      getDateTenYearsAgo() {
+        const currentDate = new Date();
+        currentDate.setFullYear(currentDate.getFullYear() - 10); 
+      
+        const month = currentDate.getMonth() + 1;
+        const day = currentDate.getDate();
+        const year = currentDate.getFullYear();
+      
+        // Formata a data no formato MM/DD/YYYY
+        const formattedDate = `${month.toString().padStart(2, '0')}/${day.toString().padStart(2, '0')}/${year}`;
+        return formattedDate;
+      }
+
 }
 
 export default new achInternalFileProcessing()

@@ -37,26 +37,30 @@ describe("Reporting Test Page - ACH Internal File Processing", () => {
         const subMenuOption = 'ACH Internal File Processing'
 
         
-        
         homePage.goToOption(optionMenu, subMenuOption)
         aCHInternalFileProcessingPage.checkACHInternalFileProcessingPage()
-
+        
         // END: Due a bug in the system, this step is necessary in order to run the test
     })
     
     it("Check Reporting > ACH Internal File Processing - Search for Valid content", () => {
         
+        const originDate = aCHInternalFileProcessingPage.getDateThreeMonthsAgo();
+        const finalDate = aCHInternalFileProcessingPage.getCurrentDate();
 
-        aCHInternalFileProcessingPage.searchForDate("01/12/2024", "10/12/2024")
+        aCHInternalFileProcessingPage.searchForDate(originDate, finalDate)
         aCHInternalFileProcessingPage.checkResultsTable()
 
 
     });
 
     it("Check Reporting > ACH Internal File Processing - Search for inValid content", () => {
+        const originDate = aCHInternalFileProcessingPage.getDateTenYearsAgo();
+        const finalDate = aCHInternalFileProcessingPage.getCurrentDate();
+        
         
 
-        aCHInternalFileProcessingPage.searchForDate("01/12/2024", "10/12/2024")
+        aCHInternalFileProcessingPage.searchForDate(originDate, finalDate)
         // aCHInternalFileProcessingPage.checkNoResultsTable()
         aCHInternalFileProcessingPage.checkErrorMessage()
 

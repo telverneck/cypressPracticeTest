@@ -3,7 +3,6 @@ import actionsPage from '../../../actions'
 let refreshButton = "button[id*='Refresh']"
 let gridTable = '#grid_find_user2, #table1' 
 let userNameInput = "input[id*='Username'] , #RadGrid1_ctl00_ctl02_ctl03_FilterTextBox_column2"
-
 let lastNameInput  = "input[id$='FilterTextBox_column']"
 let firstNameInput = "input[id$='FilterTextBox_column1']"
 let resellerDropdown = "input[id*='Reseller_Input']"
@@ -11,7 +10,6 @@ let statusDropdown = "input[id*='StatusFilter_Input']"
 let calendarButton = ".rcCalPopup" 
 let filterButton = ".rgFilter" 
 let firstMerchantItem = "tr.rgRow:nth-child(1) td:nth-child(2) input" 
-
 let loginAsDefaultLink = "//span[contains(text(),'Login as Default')]" 
 let editMerchantButton = "//span[contains(text(),'Edit Merchant')]" 
 let addUserButton = "//span[contains(text(),'Add User')]" 
@@ -19,25 +17,19 @@ let viewUsersButton = "//span[contains(text(),'View Users')]"
 let deleteMerchantButton = "//span[contains(text(),'Delete')]" 
 let deactivateButton = "//span[contains(text(),'Deactivate')]" 
 let activateButton = "//span[contains(text(),'Activate')]" 
-
 let merchantInfo = "table.tableInner tr:nth-child(2) td:nth-child(2) p"
 let merchantInfo2 = "table.tableInner tr:nth-child(2) td:nth-child(3) p" 
 let merchantInfoHeader = ".tableHeader" 
-
 let merchantInfoTab = "ul.rtsUL li:first-child" 
 let validationsTab = "ul.rtsUL li:nth-child(2)" 
 let processorsTab = "ul.rtsUL li:nth-child(3)" 
-
 let additionalInfoValidation = "#AdditionalInfo"
-
 let savedProcessorsTable= "#gridProfilesPanel"
 let activeProcessorsTable= "#gridActiveProcessorPanel"
-
 let confirmPopupButton = "div[style*='visible'] .rwDialog.rwConfirmDialog .rwDialogButtons .rwOkBtn"
 let deleteProcessorButton= "//tr[1]//td[text()='Paysafe ACH']//..//button[@aria-label='DeleteProcessor']"
 let addProfileButton= "#lbAddProfile"
 let okPopButton = ".RadWindow_Default .rwDialogButtons .rwOkBtn" 
-
 let updateMerchantButton = "#UpdateButton" 
 let viewUsersTable = ".rgMasterTable"
 let columnsItems = ".rgHeader"
