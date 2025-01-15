@@ -97,6 +97,12 @@ class findEdit {
         actionsPage.clickIframe(processorsTab)
     }
 
+    clickAddUserButton(){
+        cy.wait(5000)
+
+        actionsPage.clickIframe(addUserButton)
+    }
+
 
     checkMerchantDetail(){
         cy.wait(10000)

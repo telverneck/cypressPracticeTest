@@ -4,6 +4,7 @@ import actionsPage from '../../support/actions';
 import loginPage from '../../support/pages/login'
 import homePage from '../../support/pages/home' 
 import authenticatePage from '../../support/pages/authentication'
+import addResellerUserPage from '../../support/pages/manageUsers/addResellerUser' 
 
 import findEditPage from '../../support/pages/manageUsers/findEdit' 
 
@@ -60,6 +61,13 @@ describe("Manage Users Test Page", () => {
 
         findEditPage.clickProcessorsTab()
         findEditPage.checkProcessorsTab()
+    });
+
+    it("Check Manage Merchants > findEditPage - Add User", () => {
+
+        findEditPage.clickAddUser()
+        addResellerUserPage.checkaddResellerUserPage()
+        addResellerUserPage.createNewUser()
     });
 
  
