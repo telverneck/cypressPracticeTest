@@ -45,7 +45,7 @@ describe("Reporting Test Page - ACH Internal File Processing", () => {
     
     it("Check Reporting > ACH Internal File Processing - Search for Valid content", () => {
         
-        const originDate = aCHInternalFileProcessingPage.getDateThreeMonthsAgo();
+        const originDate = aCHInternalFileProcessingPage.getDateMonthsAgo(3);
         const finalDate = aCHInternalFileProcessingPage.getCurrentDate();
 
         aCHInternalFileProcessingPage.searchForDate(originDate, finalDate)
@@ -55,7 +55,7 @@ describe("Reporting Test Page - ACH Internal File Processing", () => {
     });
 
     it("Check Reporting > ACH Internal File Processing - Search for inValid content", () => {
-        const originDate = aCHInternalFileProcessingPage.getDateTenYearsAgo();
+        const originDate = aCHInternalFileProcessingPage.getDateMonthsAgo(10);
         const finalDate = aCHInternalFileProcessingPage.getCurrentDate();
         
         
@@ -63,7 +63,6 @@ describe("Reporting Test Page - ACH Internal File Processing", () => {
         aCHInternalFileProcessingPage.searchForDate(originDate, finalDate)
         // aCHInternalFileProcessingPage.checkNoResultsTable()
         aCHInternalFileProcessingPage.checkErrorMessage()
-
 
 
     });

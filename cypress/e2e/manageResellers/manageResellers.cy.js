@@ -38,7 +38,7 @@ describe("Manage Resellers Test Page", () => {
     })
     
     // Those Scripts are skipped due https://repayonline.atlassian.net/issues/RG-19992, waiting for fix
-    it.skip("Check Manage Resellers > Find - valid search", () => {
+    it("Check Manage Resellers > Find - valid search", () => {
 
         findEditResellers.filterBy("EqualTo")
         findEditResellers.searchByName("test")
@@ -48,7 +48,7 @@ describe("Manage Resellers Test Page", () => {
 
     });
 
-    it.skip("Check Manage Resellers > Find 2 or more columns - valid search", () => {
+    it("Check Manage Resellers > Find 2 or more columns - valid search", () => {
 
         findEditResellers.searchByName("test")
         findEditResellers.checkResultsTable()
@@ -59,7 +59,7 @@ describe("Manage Resellers Test Page", () => {
 
     });
 
-    it.skip("Check Manage Resellers > Find 1 column - Search for no results", () => {
+    it("Check Manage Resellers > Find 1 column - Search for no results", () => {
 
         findEditResellers.searchByName("No results")
         findEditResellers.checkNoResultsTable()
@@ -67,7 +67,7 @@ describe("Manage Resellers Test Page", () => {
 
     });
 
-    it.skip("Check Manage Resellers > Find 2 or more columns- Search for no results", () => {
+    it("Check Manage Resellers > Find 2 or more columns- Search for no results", () => {
 
         findEditResellers.searchByName("No results")
         findEditResellers.checkNoResultsTable()
@@ -75,7 +75,7 @@ describe("Manage Resellers Test Page", () => {
         
     });
 
-    it.skip("Check Manage Resellers > Check if Edit button is not visible", () => {
+    it("Check Manage Resellers > Check if Edit button is not visible", () => {
 
         findEditResellers.checkEditButton()
 

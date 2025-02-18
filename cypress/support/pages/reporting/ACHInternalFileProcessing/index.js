@@ -93,6 +93,15 @@ class achInternalFileProcessing {
         return formattedDate;
       }
 
+      getDateMonthsAgo(monthsAgo = 0) {
+        const currentDate = new Date();
+        currentDate.setMonth(currentDate.getMonth() - monthsAgo); 
+        const month = currentDate.getMonth() + 1;
+        const day = currentDate.getDate();
+        const year = currentDate.getFullYear();
+        return `${month.toString().padStart(2, '0')}/${day.toString().padStart(2, '0')}/${year}`;
+    }
+
 }
 
 export default new achInternalFileProcessing()

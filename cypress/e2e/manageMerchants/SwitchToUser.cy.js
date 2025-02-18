@@ -63,12 +63,16 @@ describe("Manage Users Test Page", () => {
         findEditPage.checkProcessorsTab()
     });
 
-    it("Check Manage Merchants > findEditPage - Add User", () => {
+    it("Check Manage Merchants > findEditPage - Add/Delete User (Blocked due MFA)", () => {
 
         findEditPage.clickAddUser()
         addResellerUserPage.checkaddResellerUserPage()
         addResellerUserPage.createNewUser()
+        findEditPage.clickAddUser()
+
     });
+
+    
 
  
 

@@ -43,7 +43,7 @@ describe("Manage Users Test Page", () => {
         homePage.goToOption(optionMenu2, subMenuOption2)
     })
 
-    it.skip("Switch To Merchants > Virtual Terminal - Sale", () => {
+    it("Switch To Merchants > Virtual Terminal - Sale", () => {
 
         // findEditPage.clickRefreshButton()
 
@@ -57,7 +57,7 @@ describe("Manage Users Test Page", () => {
     });
 
 
-    it.skip("Switch To Merchants > Virtual Terminal - PreAuth", () => {
+    it("Switch To Merchants > Virtual Terminal - PreAuth", () => {
 
         // findEditPage.clickRefreshButton()
         findEditPage.goToPreAuth()
@@ -67,7 +67,7 @@ describe("Manage Users Test Page", () => {
 
     });
 
-    it.skip("Switch To Merchants > Virtual Terminal - Return", () => {
+    it("Switch To Merchants > Virtual Terminal - Return", () => {
 
         // findEditPage.clickRefreshButton()
         findEditPage.goToReturn()
@@ -77,7 +77,7 @@ describe("Manage Users Test Page", () => {
 
     });
 
-    it.skip("Switch To Merchants > Virtual Terminal - ForceAuth", () => {
+    it("Switch To Merchants > Virtual Terminal - ForceAuth", () => {
 
         findEditPage.goToForceAuth()
         findEditPage.makeTransactionWithCard(masterCard)

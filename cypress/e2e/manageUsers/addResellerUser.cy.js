@@ -36,7 +36,7 @@ describe.skip("Manage Users Test Page", () => {
         addResellerUserPage.checkaddResellerUserPage()
     })
 
-    it.skip("Check Manage Users > Add Reseller User - Add User", () => {
+    it("Check Manage Users > Add Reseller User - Add User", () => {
 
         addResellerUserPage.createNewUser()
 
@@ -44,7 +44,7 @@ describe.skip("Manage Users Test Page", () => {
     });
 
     // Blocked due MFA
-    it.skip("Check Manage Users > Add Reseller User - Check Mandatory Fields", () => {
+    it("Check Manage Users > Add Reseller User - Check Mandatory Fields", () => {
 
         addResellerUserPage.clickSaveButton()
         addResellerUserPage.requiredFieldError()
@@ -54,7 +54,7 @@ describe.skip("Manage Users Test Page", () => {
     });
 
     // Blocked due MFA
-    it.skip("Check Manage Users > Add Reseller User - Check email validation", () => {
+    it("Check Manage Users > Add Reseller User - Check email validation", () => {
 
         addResellerUserPage.checkInvalidEmailError()
 

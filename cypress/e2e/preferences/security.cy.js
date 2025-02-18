@@ -35,7 +35,7 @@ describe("Preferences - Security", () => {
         homePage.goToOption(optionMenu, subMenuOption)
     })
 
-    it.skip("Check Preferences > Security info", () => {
+    it("Check Preferences > Security info", () => {
 
         securityPage.checkSecurityPage()
 

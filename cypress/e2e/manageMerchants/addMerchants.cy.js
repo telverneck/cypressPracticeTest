@@ -38,7 +38,7 @@ describe("Manage Merchants Test Page - Add", () => {
 
     })
 
-    it.skip("Check Manage Merchants > Add - Add Merchant", () => {
+    it("Check Manage Merchants > Add - Add Merchant", () => {
 
         addMerchantPage.createNewMerchant()
 
