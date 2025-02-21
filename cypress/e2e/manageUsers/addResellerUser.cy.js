@@ -8,7 +8,7 @@ import authenticatePage from '../../support/pages/authentication'
 import addResellerUserPage from '../../support/pages/manageUsers/addResellerUser' 
 
 
-describe.skip("Manage Users Test Page", () => {
+describe("Manage Users Test Page", () => {
 
     beforeEach(function () {
         cy.fixture("enviromentSettings").as('user')

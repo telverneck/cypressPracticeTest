@@ -100,7 +100,7 @@ class findEdit {
     clickAddUserButton(){
         cy.wait(5000)
 
-        actionsPage.clickIframe(addUserButton)
+        actionsPage.clickIframeXpath(addUserButton)
     }
 
 

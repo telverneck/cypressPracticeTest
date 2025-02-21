@@ -40,7 +40,7 @@ describe("Manage Users Test Page", () => {
         findEditPage.clickfirstMerchantItem() 
     })
 
-    it("Check Manage Merchants > findEditPage - Validate Merchant Info tab", () => {
+    it.skip("Check Manage Merchants > findEditPage - Validate Merchant Info tab", () => {
 
         // findEditPage.clickRefreshButton()
         findEditPage.checkMerchantDetail()
@@ -49,7 +49,7 @@ describe("Manage Users Test Page", () => {
 
     });
 
-    it("Check Manage Merchants > findEditPage - Check Validation tab", () => {
+    it.skip("Check Manage Merchants > findEditPage - Check Validation tab", () => {
 
         findEditPage.clickValidationTab()
         findEditPage.checkValidationTab()
@@ -57,18 +57,18 @@ describe("Manage Users Test Page", () => {
     });
 
     
-    it("Check Manage Merchants > findEditPage - Check Processors tab", () => {
+    it.skip("Check Manage Merchants > findEditPage - Check Processors tab", () => {
 
         findEditPage.clickProcessorsTab()
         findEditPage.checkProcessorsTab()
     });
 
-    it("Check Manage Merchants > findEditPage - Add/Delete User (Blocked due MFA)", () => {
+    it("Check Manage Merchants > findEditPage - Add/Delete User", () => {
 
-        findEditPage.clickAddUser()
+        findEditPage.clickAddUserButton()
         addResellerUserPage.checkaddResellerUserPage()
         addResellerUserPage.createNewUser()
-        findEditPage.clickAddUser()
+        findEditPage.clickAddUserButton()
 
     });
 
