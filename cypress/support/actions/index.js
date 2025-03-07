@@ -99,6 +99,11 @@ class ActionsPage {
         switchToIframe().find(webElement).select(value)
     }
 
+    selectValueFromListXpath(webElement, value) {
+        switchToIframe().xpath(webElement).select(value)
+    }
+
+
 }
 
 export default new ActionsPage()

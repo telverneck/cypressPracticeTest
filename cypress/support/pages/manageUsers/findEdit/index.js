@@ -71,7 +71,17 @@ class findEdit {
 
     clickLoginAsDefault(){
         cy.wait(10000)
-        this.clickButtonWithText("Login as Default")
+        this.clickButtonWithText("Login as Default") 
+        cy.wait(2000)
+
+        // cy.document().trigger('keydown', {key:'Tab'})
+        cy.document().trigger('keydown', {key:'Enter'})
+        cy.document().trigger('keydown', {key:'Enter'})
+        cy.document().trigger('keydown', {key:'Enter'})
+        // cy.get('body').type('{enter}')
+
+        // actionsPage.clickIframe(".rwDialog.rwConfirmDialog .rwDialogButtons .rwOkBtndiv[style*='backface-visibility: visible; visibility: visible;'] .rwDialog.rwConfirmDialog .rwDialogButtons .rwOkBtn:nth-child(1)")
+
     }
 
     clickViewUsers(){ 

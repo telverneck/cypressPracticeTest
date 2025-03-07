@@ -40,7 +40,7 @@ describe("Manage Users Test Page", () => {
         findEditPage.clickfirstMerchantItem() 
     })
 
-    it.skip("Check Manage Merchants > findEditPage - Validate Merchant Info tab", () => {
+    it("Check Manage Merchants > findEditPage - Validate Merchant Info tab", () => {
 
         // findEditPage.clickRefreshButton()
         findEditPage.checkMerchantDetail()
@@ -49,7 +49,7 @@ describe("Manage Users Test Page", () => {
 
     });
 
-    it.skip("Check Manage Merchants > findEditPage - Check Validation tab", () => {
+    it("Check Manage Merchants > findEditPage - Check Validation tab", () => {
 
         findEditPage.clickValidationTab()
         findEditPage.checkValidationTab()
@@ -57,7 +57,7 @@ describe("Manage Users Test Page", () => {
     });
 
     
-    it.skip("Check Manage Merchants > findEditPage - Check Processors tab", () => {
+    it("Check Manage Merchants > findEditPage - Check Processors tab", () => {
 
         findEditPage.clickProcessorsTab()
         findEditPage.checkProcessorsTab()
@@ -68,9 +68,21 @@ describe("Manage Users Test Page", () => {
         findEditPage.clickAddUserButton()
         addResellerUserPage.checkaddResellerUserPage()
         addResellerUserPage.createNewUser()
-        findEditPage.clickAddUserButton()
+        homePage.goToOption(optionMenu, subMenuOption)
+        findEditPage.checkFindEditPage()
+        findEditPage.searchByName("E2E Tsys Test Merchant")
+        findEditPage.clickfirstMerchantItem() 
+        findEditPage.clickfirstMerchantItem() 
 
     });
+
+    it.skip("Check Transaction Report > Validate PDF file", () => {
+
+        findEditPage.clickLoginAsDefault()
+        homePage.goToOption("Transaction Reports", "Card")
+
+    });
+
 
     
 

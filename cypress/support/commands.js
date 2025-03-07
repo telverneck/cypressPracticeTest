@@ -26,4 +26,5 @@
 
 require('cypress-xpath')
 import 'cypress-iframe';
+require('cypress-downloadfile/lib/downloadFileCommand')
 

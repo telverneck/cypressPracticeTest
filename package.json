@@ -23,6 +23,7 @@
     "@types/cypress": "^1.1.3",
     "cross-spawn": "7.0.5",
     "cypress": "^13.13.3",
+    "cypress-downloadfile": "^1.2.4",
     "cypress-file-upload": "^5.0.8",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
@@ -30,7 +31,8 @@
     "mocha": "^10.7.3",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.3.0",
-    "mochawesome-report-generator": "^6.2.0"
+    "mochawesome-report-generator": "^6.2.0",
+    "pdf-parse": "^1.1.1"
   },
   "dependencies": {
     "braces": "^3.0.3",
