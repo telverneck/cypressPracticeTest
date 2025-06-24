@@ -1,15 +1,12 @@
 import actionsPage from '../../actions'
 
-let loginPage = "/login.aspx"
+let loginPage = "/practice-test-login"
 
-let loginInput = '#Login1_UserName'
-let passwordInput = '#Login1_Password'
-let loginButton = '#Login1_LoginButton'
-let bannerImage = '#LogoImage'
-let errorMessageToast = "td[style='color:Red;']"
-let forgotPasswordLink = '#Login1_PasswordRecoveryLink' 
-// private forgotPasswordLink2 = cy.get('#Login1_PasswordRecoveryLink')
-
+let loginInput = '#username'
+let passwordInput = '#password'
+let loginButton = '#submit'
+let errorMessageToast = "#error"
+let pageTitle = "Test Login | Practice Test Automation"
 class LoginPage {
 
 
@@ -25,30 +22,15 @@ class LoginPage {
 
     }
 
-    checkHomePage(){
+    
+    checkErrorLoginMessage(text){
 
-        cy.iframe('#bannerFrame')
-        .as('bannerFrame')
-        .find('.bannerFlex div.user-info-container div:nth-child(1)')
-        .should('contains.text', 'Welcome, ')
-    }
-
-    checkErrorLoginMessage(){
-
-        actionsPage.elementShouldContainText(errorMessageToast, 'Your login attempt was not successful')
+        actionsPage.elementShouldContainText(errorMessageToast, text)
     }
 
     checkLoginPage(){
-        actionsPage.pageTitleShouldBeEqual('REPAY')
-        actionsPage.isElementVisible(bannerImage)
+        actionsPage.pageTitleShouldBeEqual(pageTitle)
     }
-
-    clickForgotPassword(){
-        actionsPage.click(forgotPasswordLink)
-        
-    }
-
-    
 
 }
 

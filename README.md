@@ -143,15 +143,9 @@ Cypress allows you to pass in [--environment variables](https://docs.cypress.io/
 `npx cypress run --spec=cypress/e2e/[ADD_FOLDER]`  to run a specific folder
 
 
-# How to run cypress test in parallel mode
+# How to run cypress test in parallel mode (WIP)
 
 By Default, the project is already setup to run in parallel mode using Cypress-Parallel dependency and using the command "cypress-parallel -d cypress/e2e/[FOLDER] -t 2 -s run", you can lso use the shortcut bellow to run parallel tests after you choose the folder
 
 `yarn cy:parallel` 
 
-# How to get your own cookie value
-
-
-Open DevTools and go to App > Cookies:
-
-copy RememberDevice and paste it in Fixture > Gateway Credentials.json

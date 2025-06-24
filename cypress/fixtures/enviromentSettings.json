@@ -1,13 +1,8 @@
 {
-    "login": "trodrigues",
-    "password": "Wexinc@2022#",  
-    "code":"626197",
-    "cookiesName":"rememberDevice_537194149",
-    "cookiesValue":"%245%24kD%2bKTqFeyNyZq8MAl8C8DQ%3d%3d%248GYGRhnt3oB7uGQBEMLDYNSEeCC%2fg3RpcS5EqmhmjMxCiMc6BPK1BedTPmnAA8vq",
-    "loginMerchant": "newAutomationUser",
-    "passwordMerchant": "Wexinc@2022#",  
-    "cookiesNameMerchant":"rememberDevice_1073975774",
-    "cookiesValueMerchant":"%245%24YNXoWUDraNgkL1oPaRHrRw%3d%3d%24rX64u7QRklWHdbvjZZqx76loxmNxDA7YzO9iX5aNqrs0iTbcHrt7ucnplKSPhGYpEx6a%2fR%2bON2GCSmKWe8yeEA%3d%3d"
+    "login": "student",
+    "password": "Password123",  
+    "wrongLogin": "incorrectUser",
+    "wrongPassword": "incorrectPassword"  
     
 }
 
