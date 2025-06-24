@@ -1,7 +1,7 @@
 {
   "name": "cypressautomationproject2023",
   "version": "1.0.0",
-  "description": "Automation Test Project for Repay Gateway",
+  "description": "Automation Test Project",
   "main": "index.js",
   "scripts": {
     "test": "npx cypress open",
@@ -13,8 +13,6 @@
   "keywords": [
     "cypress",
     "nodejs",
-    "repay",
-    "gateway"
   ],
   "author": "Telmo Correa",
   "license": "MIT",

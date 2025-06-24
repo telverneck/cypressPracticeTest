@@ -1,4 +1,4 @@
-# gateway-cypress-ui-framework
+# cypress-ui-framework
 
 ## System requirements
 Operating System
